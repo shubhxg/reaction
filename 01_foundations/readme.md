@@ -108,3 +108,20 @@ When you use a Content Delivery Network (CDN) to host static assets for your web
 CORS is like a handshake between your website and CDN, saying it's okay to load resources from each other. It acts as a security check to prevent malicious scripts from loading unauthorized resources.
 
 if header contains a cors then good ✅👍 otherwise bad and gets rejected 👎❌
+
+## React element is an object not an html tag
+
+if I print the typeof the element I created using createElement method I will see that it's an object
+
+```jsx
+typeof heading // returns an object with some properties like type, prop
+```
+
+## Props
+
+`Props` = `properties` (attributes that we passed) + `childrenElement`
+
+```jsx
+{ class:"heading", attribute: "value" }, 
+	  "Hello world from react!"
+```
