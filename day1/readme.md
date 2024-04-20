@@ -2,7 +2,7 @@
 
 ## What is react?
 
-A `javascript` library which is used to create large complex user interfaces for frontend.
+A `javascript` library made by facebook and which is used to create large complex user interfaces of frontend.
 
 ## Why to learn react?
 
@@ -12,15 +12,15 @@ Makes it easy to build `complex frontend UI`. Modern UIs are built using librari
 
 One should know javascript and DOM before react.
 
-## Who made react?
+## Who made it?
 
-Software engineer team at `facebook (meta)`.
+Software engineer team at facebook.
 
 ## Why was it created?
 
 To fix these issues:
 
-- UI bugs such as phantom messages issue
+- UI bugs such as phantom messages issue.
 - Code complexity
 - UI Inconsistency
 
@@ -31,11 +31,45 @@ To fix these issues:
 
 ## Why it got hate in starting days?
 
-Complexity of new library or learning a new tech, a new learning curve and some initial bugs.
+Complexity of new library or learning a new tech and other bugs.
+
+## What is SPA (Single page application)?
+
+A type of web application or website that loads a single HTML page and dynamically updates that page as the user interacts with it.
+
+React creates SPA (Single page applications) in which pages don’t reload.
 
 ## Is react still open source?
 
 Yes
+
+## What to learn in react?
+
+- `State and UI manipulation`
+- `JSX`
+- `Component reusability`
+- `Reusing components (props)`
+- `Propagating changes (hooks)`
+    - `useState()`
+    - `useEffect()`
+    - `useRef()`
+    -  `useCallback()`
+    - `useContext()`
+    - ...
+
+## Additional learning after react
+
+- `react router-dom`
+- `state management` using redux, recoil, redux-toolkit, contextapi, zustand
+- `class based components` (optional)
+- `Backent as a service (BAAS)` such as appwrite, firebase, supabase,
+
+## What after learning react
+
+> React is not the full solution as it is bad for SEO of the page, browser rendering the html and css which makes websites a little slower, router related issues.
+> 
+
+We can learn nextjs, remix, or gatsby after react.
 
 ## Browsers don’t understand React
 
