@@ -79,7 +79,7 @@ Browsers only understand `html, css and javascript`. They dont understand react.
 
 We can use CDN links to connect and get react
 
-```js
+```html
 <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 ```
