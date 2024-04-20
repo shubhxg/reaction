@@ -1,3 +1,5 @@
+// Core react
+
 // creating a root element to hold the elements using ReactDOM
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
