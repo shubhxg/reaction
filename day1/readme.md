@@ -1,4 +1,4 @@
-# React Introduction
+# Day 1
 
 ## What is react?
 
@@ -61,3 +61,16 @@ What i noticed is i can see its the whole code for react library **“kind of”
 - A CDN is a network of distributed servers that work together to deliver content to users more efficiently.
 - When a user requests a resource, the CDN serves it from the server closest to the user's location, which reduces latency and improves load times.
 
+## Library vs. Framework
+
+Library: A library is a collection of reusable code modules that can be directly called by an application to perform specific tasks. Libraries are focused on providing functionalities that developers can use as needed within their code. Makes it easier to work with complex code without even ever writing that functionality from scratch.
+
+Framework: A framework provides a proper strict structure for building applications. It dictates the architecture of the application and provides a skeleton where the developer fills in the specifics. Frameworks tells a certain way of doing things.
+
+## Cross Origin Resource Sharing
+
+When you use a Content Delivery Network (CDN) to host static assets for your website, like images or Javascript files, those files are being served from a different domain than your main website. This difference in domain can cause security issues with modern web browsers. *(Browser crying noices - same origin policy)*
+
+CORS is like a handshake between your website and CDN, saying it's okay to load resources from each other. It acts as a security check to prevent malicious scripts from loading unauthorized resources.
+
+if header contains a cors then good ✅👍 otherwise bad and gets rejected 👎❌
