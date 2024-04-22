@@ -1,4 +1,4 @@
-# Day 1
+# Foundations
 
 ## What is react?
 
@@ -50,12 +50,12 @@ Yes
 - `Component reusability`
 - `Reusing components (props)`
 - `Propagating changes (hooks)`
-    - `useState()`
-    - `useEffect()`
-    - `useRef()`
-    -  `useCallback()`
-    - `useContext()`
-    - ...
+  - `useState()`
+  - `useEffect()`
+  - `useRef()`
+  - `useCallback()`
+  - `useContext()`
+  - ...
 
 ## Additional learning after react
 
@@ -67,7 +67,6 @@ Yes
 ## What after learning react
 
 > React is not the full solution as it is bad for SEO of the page, browser rendering the html and css which makes websites a little slower, router related issues.
-> 
 
 We can learn nextjs, remix, or gatsby after react.
 
@@ -80,8 +79,14 @@ Browsers only understand `html, css and javascript`. They dont understand react.
 We can use CDN links to connect and get react
 
 ```html
-<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
 ```
 
 Went to the CDN link and found that it has got a javascript file called `react.development.js` and it has lot of code on it.
@@ -91,7 +96,7 @@ What i noticed is i can see its the whole code for react library **“kind of”
 ## What the heck is CDN?
 
 - CDN stands for **Content Delivery Network.**
-- CDN links are URLs of resources *(such as images, scripts, stylesheets, etc.)* hosted on a Content Delivery Network.
+- CDN links are URLs of resources _(such as images, scripts, stylesheets, etc.)_ hosted on a Content Delivery Network.
 - A CDN is a network of distributed servers that work together to deliver content to users more efficiently.
 - When a user requests a resource, the CDN serves it from the server closest to the user's location, which reduces latency and improves load times.
 
@@ -103,7 +108,7 @@ Framework: A framework provides a proper strict structure for building applicati
 
 ## Cross Origin Resource Sharing
 
-When you use a Content Delivery Network (CDN) to host static assets for your website, like images or Javascript files, those files are being served from a different domain than your main website. This difference in domain can cause security issues with modern web browsers. *(Browser crying noices - same origin policy)*
+When you use a Content Delivery Network (CDN) to host static assets for your website, like images or Javascript files, those files are being served from a different domain than your main website. This difference in domain can cause security issues with modern web browsers. _(Browser crying noices - same origin policy)_
 
 CORS is like a handshake between your website and CDN, saying it's okay to load resources from each other. It acts as a security check to prevent malicious scripts from loading unauthorized resources.
 
@@ -114,7 +119,7 @@ if header contains a cors then good ✅👍 otherwise bad and gets rejected 👎
 if I print the typeof the element I created using createElement method I will see that it's an object
 
 ```jsx
-typeof heading // returns an object with some properties like type, prop
+typeof heading; // returns an object with some properties like type, prop
 ```
 
 ## Props
@@ -122,6 +127,33 @@ typeof heading // returns an object with some properties like type, prop
 `Props` = `properties` (attributes that we passed) + `childrenElement`
 
 ```jsx
-{ class:"heading", attribute: "value" }, 
+{ class:"heading", attribute: "value" },
 	  "Hello world from react!"
 ```
+
+## What is async and defer?
+
+A: `Async` - The async attribute is a boolean attribute. The script is downloaded in parallel to parse the page, and executed as soon as it is available (does not block HTML DOM construction during downloading process).
+
+```html
+<script src="demo_async.js" async></script>
+```
+
+`Defer` - The defer attribute is a boolean attribute. The script is downloaded in parallel(in the background) to parsing the page, and executed after the page has finished parsing(when browser finished DOM construction). The defer attribute tells the browser not to wait for the script. Instead, the browser will continue to process the HTML, build DOM.
+
+```html
+<script src="demo_defer.js" defer></script>
+```
+
+## Using type="module" in script tag
+Unless you're supporting ancient legacy systems, always add `type="module"` to all your script tags:
+
+```html
+<script type="module" src="main.js"></script>
+```
+
+`<script defer nomodule>` can be used as a legacy fallback.
+
+It allows you to import modules, which makes it easier to organize your code. Enable strict mode by default. Makes your code run faster, and reports more runtime errors instead of silently ignoring them. 
+
+Execute your code only after the DOM has initialized, which makes DOM manipulation easier. Thanks to this, you won't need to listen to load/readystatechange/DOMContentLoaded events. Prevent top level variables from implicitly polluting the global namespace. Allow you to use top-level await in supported engines. Load and parse your code asynchronously, which improves load performance.
