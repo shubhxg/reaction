@@ -71,5 +71,11 @@ We can use `npx create-react-app` to build our react app but the issue is it's t
 
 `npx parcel index.html` where `npx` is `node package executer` is used to run/build package.
 
+Parcel is doing following for us:
+- local server
+- dev build
+- hmr (hot module replacement)
+- Uses file watching algorithm 
+
 ## Installing react and react-dom as dependency
 `npm install react react-dom` or `npm i react react-dom` both are same
