@@ -69,4 +69,7 @@ We can use `npx create-react-app` to build our react app but the issue is it's t
 
 ## Building using parcel
 
-`npx parcel index.html`
+`npx parcel index.html` where `npx` is `node package executer` is used to run/build package.
+
+## Installing react and react-dom as dependency
+`npm install react react-dom` or `npm i react react-dom` both are same
