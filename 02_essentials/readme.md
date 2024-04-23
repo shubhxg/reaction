@@ -67,7 +67,7 @@ Installing parcel dependency - `npm install -D parcel`
 
 We can use `npx create-react-app` to build our react app but the issue is it's too slow.
 
-## Building using parcel
+## Start development server using parcel
 
 `npx parcel index.html` where `npx` is `node package executer` is used to run/build package.
 
@@ -79,3 +79,6 @@ Parcel is doing following for us:
 
 ## Installing react and react-dom as dependency
 `npm install react react-dom` or `npm i react react-dom` both are same
+
+## How to run this project
+1. `npm install` to install the dependencies 
