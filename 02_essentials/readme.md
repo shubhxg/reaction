@@ -35,6 +35,18 @@ These packages sometimes are called `dependencies`.
 
 - this `integrity hash` ensures that when someone else installs the same package, they get exactly the same code.
 
+- browserslist property in package.json is a very useful one which can be used to support the browsers list for which your website or webapp will work.
+
+example:
+
+```js
+"browserslist": [
+    "last 10 versions"  
+]
+// where last 10 versions mean last 10 versions of all the browsers.
+// this way you can support pretty much many old browsers
+```
+
 ## Versioning of Dependencies
 `x.y.z` where `z` is patch fix, `y` is minor changes and `x` is major update.
 `^` means you can update your package upto less than x version.

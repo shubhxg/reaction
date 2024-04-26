@@ -13,3 +13,9 @@ Currently, two official plugins are available:
 2. `npm create vite@latest`
 3. `npm install`
 4. `npm run dev`
+
+## javascript expression {}
+
+In React, the concept of embedding dynamic values and expressions within JSX using curly braces {} is often referred to as JSX expressions or JavaScript expressions in JSX.
+
+In JSX (JavaScript XML), the curly braces {} are used to embed JavaScript expressions and values inside the JSX code.
