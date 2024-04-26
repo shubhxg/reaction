@@ -4,6 +4,8 @@
   "description": "The default package manager for Node projects. Comes preinstalled with NodeJS. Comes with a CLI used to interact with the online database of NPM. This database is called the `NPM Registry`, and it hosts public and private 'packages.'",
   "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "keywords": [],
