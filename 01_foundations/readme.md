@@ -43,6 +43,9 @@ React creates SPA (Single page applications) in which pages don’t reload.
 
 Yes
 
+## What was the most famous way to do DOM manipulation before react
+jquery was in demand before react became the standard way to do the DOM related work.
+
 ## What to learn in react?
 
 - `State and UI manipulation`
