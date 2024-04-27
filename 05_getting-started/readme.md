@@ -73,12 +73,24 @@ So any values that is dynamic on the page and might change is the `state`.
   - give how states are connected to the components
   - react will take care of rerendering it
 
+## Rerendering
+
+Updating the state and rerender (changing the DOM)
+
+`'A state change'` triggers rerendering of DOM elements.
+
+We define component once and when the state changes it triggers the rerendering phase and react takes care of rerendering.
+
 ## Types of Components
 
 1. `Functional Component`: New way (more preferred)
+2. `Class Based Component`: Old way
+
+## Functional Components
 
 ```jsx
-// a function that return react elements
+// a function that return react elements is a functional component
+// they start with a capital letter
 const HeadingComp = () => {
   return (
     <div className = "container">
@@ -95,12 +107,29 @@ const ParagraphComp = () => (
 
 ```
 
-2. `Class Based Component`: Old way
+## Components vs. React Elements
+```jsx
+// this is a react element, it doesn't return anything
+const headingElement = (
+  <h1 className="heading">Hello world in React!</h1>
+)
 
-## Rerendering
+// this is a react functional component
+const HeadingComp = () => {
+  return <h1>This is a heading component</h1>
+}
 
-Updating the state and rerender (changing the DOM)
+// The render() method in ReactDOM expects a React element, 
+// which can be a component or a simple JSX element.
 
-`'A state change'` triggers rerendering of DOM elements.
+ // rendering a react element 
+ReactDOM.createRoot(document.getElementById("root")).render (
+ headingElement
+);
 
-We define component once and when the state changes it triggers the rerendering phase and react takes care of rerendering.
+// this is how you render a component
+ReactDOM.createRoot(document.getElementById("root")).render (
+ <HeadingComp />
+);
+
+```

@@ -1,9 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// jsx is not html its javascript xml 
-const jsxHeading = <h1 className="heading">Hello world in React!</h1>;
+// this is a react element
+const headingElement = (
+  <h1 className="heading">Hello world in React!</h1>
+)
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  jsxHeading
+// react functional component
+const HeadingComp = () => {
+  return <h1>This is a heading component!</h1>
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render (
+ <HeadingComp />
 );
