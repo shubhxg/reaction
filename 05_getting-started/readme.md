@@ -20,6 +20,9 @@ const UserCard = (props) => {
 };
 ```
 
+![jsx2](https://github.com/shubhxg/reaction/assets/69891912/6b6b1231-092d-4af3-af1f-748d8869a1f9)
+
+
 > 💡 Note: `JSX` is not required for using `React`, it's used because it makes UI development in React easier.
 
 ## Babel Compiler
