@@ -18,7 +18,10 @@ const Paragraph = () => {
 
 const Heading = () => {
   return (
-    <div id="container" style={{ "text-align": "center", "margin-top": "300px"}}>
+    <div
+      id="container"
+      style={{ "text-align": "center", "margin-top": "300px" }}
+    >
       <Title />
       {h3}
       <Paragraph />
@@ -26,6 +29,4 @@ const Heading = () => {
   );
 };
 
-ReactDOM.createRoot(document.getElementById("root")).render(
- <Heading/>
-);
+ReactDOM.createRoot(document.getElementById("root")).render(<Heading />);
