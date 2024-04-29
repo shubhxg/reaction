@@ -208,6 +208,17 @@ const Heading = () => (
 
 > 📝 Note: Since we can nest anything inside anything thats why it's important to remember the foundations of `sementic HTML` and how html should be rendered otherwise we might end up creating very bad html page which is not good for `SEO` and `Accessibility`.
 
+## Invoking a Functional Component
+
+```jsx
+
+const Heading = () => (
+  <div id="container">
+    {Title()}
+  </div>
+);
+```
+
 ## Cross Site Scripting (XSS)
 
 `Cross-Site Scripting (XSS)` is a type of security vulnerability that allows an attacker to inject malicious scripts into web pages.
