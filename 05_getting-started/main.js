@@ -1,16 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// this is a react element
-const headingElement = (
-  <h1 className="heading">Hello world in React!</h1>
-)
+const h3 = <h3>Practice, Practice, Practice</h3>;
 
-// react functional component
-const HeadingComp = () => {
-  return <h1>This is a heading component!</h1>
-}
+const Title = () => {
+  return <h1 className="heading">Welcome to my React App!</h1>;
+};
 
-ReactDOM.createRoot(document.getElementById("root")).render (
- <HeadingComp />
+const Paragraph = () => {
+  return (
+    <p className="para" style={{ "font-size": "1.2rem", color: "grey" }}>
+      This is a paragraph of my heading! This is generated inside from a
+      functional component.
+    </p>
+  );
+};
+
+const Heading = () => {
+  return (
+    <div id="container" style={{ "text-align": "center", "margin-top": "300px"}}>
+      <Title />
+      {h3}
+      <Paragraph />
+    </div>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+ <Heading/>
 );

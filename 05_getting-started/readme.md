@@ -119,17 +119,91 @@ const HeadingComp = () => {
   return <h1>This is a heading component</h1>
 }
 
+const HeadingComp = () => (
+  <h1>This is a heading component</h1>
+)
+
 // The render() method in ReactDOM expects a React element, 
 // which can be a component or a simple JSX element.
 
- // rendering a react element 
+ // render a react element 
 ReactDOM.createRoot(document.getElementById("root")).render (
  headingElement
 );
 
-// this is how you render a component
+// render a component
 ReactDOM.createRoot(document.getElementById("root")).render (
  <HeadingComp />
 );
 
 ```
+## Component Composition
+
+`Component Composition` in React refers to the practice of building complex user interfaces by combining and nesting multiple simpler components together.
+
+```jsx
+const Title = () => {
+  return ( 
+    <h1 className="heading">
+      Welcome to my React App!
+    </h1>
+  )
+}
+
+const Paragraph = () => {
+  return ( 
+    <p className="para">
+      This is a paragraph component.
+    </p>
+  )
+}
+
+// nesting Title and Paragraph inside Heading
+const Heading = () => {
+  return <div id="container">
+    <Title />
+    <Paragraph />
+  </div>
+};
+```
+
+## Injecting JavaScript inside JSX
+
+We use `{}` to inject any javascript code inside jsx.
+
+for example:
+
+```jsx
+const titleElement = (
+    <h1 className="heading">
+      Welcome to my React App!
+    </h1>
+)
+
+// nesting Title and Paragraph inside Heading
+const Heading = () => {
+  return <div id="container">
+    {titleElement}
+  </div>
+};
+```
+
+## Infinite Component Composition Loop
+Nesting `Title` inside `Heading` and `Heading` inside `Title`. Basically an infinite loop.
+
+```jsx
+const Title = () => ( 
+  <h1 className="heading">
+    Welcome to my React App!
+    <Heading/> 
+  </h1>
+)
+
+const Heading = () => (
+  <div id="container">
+    <Title />
+  </div>
+);
+```
+
+> 📝 Note: Since we can nest anything inside anything thats why it's important to remember the foundations of `sementic HTML` and how html should be rendered otherwise we might end up creating very bad html page which is not good for `SEO` and `Accessibility`.
