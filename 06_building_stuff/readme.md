@@ -40,3 +40,7 @@ Each part of application can be built as a `component` separately.
 - Address Info
 - Contact Info
 </details>
+
+## Component Reusability
+
+Each component should be built once and not again and again, meaning DRY principle, this means only one component and then we can reuse those components.
