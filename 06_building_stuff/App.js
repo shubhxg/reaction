@@ -1,31 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo">
-        <h1>React App</h1>
-        <img />
-      </div>
-      <div className="nav-items"></div>
-    </div>
-  );
-}
-
-const HeroSection = () => {
-  
-}
+import Header from "/components/Header";
+import Hero from "/components/Hero";
 
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <HeroSection />
+      <Hero />
     </div>
-  )
-}
+  );
+};
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-<AppLayout />
-);
+ReactDOM.createRoot(document.getElementById("root")).render(<AppLayout />);

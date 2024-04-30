@@ -7,4 +7,42 @@
 body {
   background-color: #212121;
   color: white;
+  font-family: "Lato", sans-serif;
+}
+
+.header {
+  height: 80px;
+  cursor: pointer;
+  user-select: none;
+}
+
+li {
+  max-width: 100px;
+  list-style: none;
+  background-color: rgb(61, 61, 61);
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.logo {
+  padding-top: 0.1rem;
+  max-width: 2.6rem;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-sa {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex: 1;
 }
