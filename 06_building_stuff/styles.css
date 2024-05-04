@@ -4,16 +4,46 @@
   box-sizing: border-box;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
 body {
   background-color: #212121;
   color: white;
   font-family: "Lato", sans-serif;
 }
 
+.starSpan {
+  margin-top: 0.1rem;
+  margin-right: 0.8rem;
+}
+
+.tagSpan {
+  margin-top: 0.2rem;
+  color: grey;
+}
+
 .header {
-  height: 80px;
+  background-color: #1b1b1b;
+  height: 70px;
   cursor: pointer;
   user-select: none;
+}
+
+.navContainer {
+  padding: 0.8rem;
+}
+
+.cards-container {
+  padding: 0rem 1rem;
+}
+
+.card-restro {
+  border-radius: 0.5rem;
+  background-color: rgb(55, 55, 55);
+  padding: 1rem;
+  margin: 1rem;
 }
 
 li {
@@ -25,6 +55,14 @@ li {
   text-align: center;
 }
 
+.card-img {
+  width: 20rem;
+  height: 12rem;
+  border-radius: 1rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
 .logo {
   padding-top: 0.1rem;
   max-width: 2.6rem;
@@ -32,17 +70,48 @@ li {
   border-radius: 0.8rem;
 }
 
+.search-container {
+  margin: 1rem;
+}
+
+input {
+  border: none;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border-radius: 0.2rem;
+  background-color:  rgb(163, 163, 163);
+}
+
+button {
+  padding: 0.4rem 1rem;
+  background-color: #e5065d;
+  border: none;
+  color: white;
+  border-radius: 0.2rem;
+}
+
+/* flex classes */
+
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
 }
 
 .flex-sa {
   display: flex;
   gap: 2rem;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0rem 12rem;
   flex-wrap: wrap;
   flex: 1;
+}
+
+.card-restro:hover {
+  scale: 1.04;
+  user-select: none;
+  cursor: pointer;
 }
