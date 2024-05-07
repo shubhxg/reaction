@@ -26,6 +26,7 @@ const Header = () => {
 };
 
 const CardRestro = (props) => {
+  const {resName, rating, cuisine} = props;
   return (
     <div className="card-restro">
       <img
@@ -33,13 +34,13 @@ const CardRestro = (props) => {
         alt="restraunt image"
         src="https://img.freepik.com/premium-photo/large-bowl-food-with-fish-vegetables_197463-2405.jpg"
       />
-      <h3>{props.resName}</h3>
+      <h3>{resName}</h3>
       <div className="starSpan">
-        <span>⭐ {props.rating}</span>
+        <span>⭐ {rating}</span>
         <span> | 30-40 mins</span>
       </div>
       <div className="tagSpan">
-        <span>{props.cuisine}</span>
+        <span>{cuisine}</span>
       </div>
     </div>
   );

@@ -57,16 +57,60 @@ You can think of props as args given to the function.
 // this is function receiving the props
 const CardRestro = (props) => {
   return (
+    // something
+  )
+}
 
+// Accepting values as props but destructured while accepting
+const CardRestro = ({property1, property2}) => {
+  return (
+    // something
   )
 }
 
 // sending props
 <CardRestro 
-  resName = "something"
-  tags = "some tags"
+  property1 = "value1"
+  property2 = "value2"
+  property3 = "value3"
+  property4 = "value4"
 />
 
 // this above properties gets wrapped as an object and passed as props
 
+```
+
+Props are used when we want to `pass data dynamically to a component`.
+
+## Config Driven UI
+
+It is an approach to building user interfaces where the `structure, layout, and behavior` of the `UI components` are defined in a separate `configuration file`, rather than being hard-coded.
+
+In this architecture, the UI components are typically defined using a structured data format, such as `JSON` or `YAML`.
+
+This configuration file acts as a `blueprint` for the `UI`, specifying the components to be rendered, their properties, layout, and interactions.
+
+Example:
+
+A `config.json` file
+```jsx
+{
+  "title": "Welcome to my App",
+  "description": "This is a sample config-driven React component.",
+  "buttonText": "Click me"
+}
+```
+Using this `config file` to generate dynamic data on the page.
+```jsx
+import React from 'react';
+import config from './config.json';
+
+export default const MyComponent = () => {
+  return (
+    <div>
+      <h1>{config.title}</h1>
+      <p>{config.description}</p>
+    </div>
+  );
+};
 ```
