@@ -1,4 +1,4 @@
-*, *::after, *::before {
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -40,6 +40,7 @@ body {
 }
 
 .card-restro {
+  width: 22rem ;
   border-radius: 0.5rem;
   background-color: rgb(55, 55, 55);
   padding: 1rem;
@@ -50,15 +51,15 @@ li {
   max-width: 100px;
   list-style: none;
   background-color: rgb(61, 61, 61);
-  border-radius: 0.2rem;
+  border-radius: 0.4rem;
   padding: 0.5rem 1rem;
   text-align: center;
 }
 
 .card-img {
-  width: 20rem;
+  width: 100%;
   height: 12rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   object-fit: cover;
   margin-bottom: 1rem;
 }
@@ -71,7 +72,7 @@ li {
 }
 
 .search-container {
-  margin: 1rem;
+  margin: 2rem;
 }
 
 input {
@@ -79,7 +80,9 @@ input {
   padding: 0.5rem;
   margin-right: 1rem;
   border-radius: 0.2rem;
-  background-color:  rgb(163, 163, 163);
+  background-color:  rgb(51, 51, 51);
+  color: white;
+  border: none;
 }
 
 button {
@@ -88,6 +91,7 @@ button {
   border: none;
   color: white;
   border-radius: 0.2rem;
+  cursor: pointer;
 }
 
 /* flex classes */
@@ -111,7 +115,12 @@ button {
 }
 
 .card-restro:hover {
-  scale: 1.04;
   user-select: none;
   cursor: pointer;
+  border: 1px solid rgb(100, 100, 100);
+  background-color: #424242;
+}
+
+button:hover {
+  background-color: #b90248;
 }

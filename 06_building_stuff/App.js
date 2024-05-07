@@ -13,7 +13,7 @@ const Header = () => {
           />
         </div>
         <div className="nav-items">
-          <ul className="flex-center" style= {{"gap": "2rem"}}>
+          <ul className="flex-center" style={{ gap: "2rem" }}>
             <li>Home</li>
             <li>Login</li>
             <li>Contact</li>
@@ -25,7 +25,7 @@ const Header = () => {
   );
 };
 
-const CardRestro = () => {
+const CardRestro = (props) => {
   return (
     <div className="card-restro">
       <img
@@ -33,13 +33,13 @@ const CardRestro = () => {
         alt="restraunt image"
         src="https://img.freepik.com/premium-photo/large-bowl-food-with-fish-vegetables_197463-2405.jpg"
       />
-      <h3>Restraunt Name</h3>
+      <h3>{props.resName}</h3>
       <div className="starSpan">
-        <span>⭐ 4.1</span>
-        <span>   |   30-40 mins</span>
+        <span>⭐ {props.rating}</span>
+        <span> | 30-40 mins</span>
       </div>
       <div className="tagSpan">
-        <span>North Indian, Biryani</span>
+        <span>{props.cuisine}</span>
       </div>
     </div>
   );
@@ -57,12 +57,36 @@ const Hero = () => {
       </div>
       <h2 style={{ "margin-left": "13rem" }}>Top restaurants near you</h2>
       <div className="cards-container flex-center">
-        <CardRestro />
-        <CardRestro />
-        <CardRestro />
-        <CardRestro />
-        <CardRestro />
-        <CardRestro />
+        <CardRestro
+          resName="Krishna Bhojnalay"
+          cuisine="North Indian"
+          rating="4.1"
+        />
+        <CardRestro
+          resName="Vaishno Dhaba"
+          cuisine="South Indian, Chinese"
+          rating="3.7"
+        />
+        <CardRestro
+          resName="Host Hotel"
+          cuisine="North Indian, Chinese"
+          rating="4.4"
+        />
+        <CardRestro
+          resName="Pandit Ji Nashta Corner"
+          cuisine="North Indian"
+          rating="3.8"
+        />
+        <CardRestro
+          resName="KFC"
+          cuisine="Chicken, Chinese"
+          rating="4.1"
+        />
+        <CardRestro
+          resName="Crazy Point"
+          cuisine="North Indian, Chinese"
+          rating="4.2"
+        />
       </div>
     </section>
   );

@@ -44,3 +44,29 @@ Each part of application can be built as a `component` separately.
 ## Component Reusability
 
 Each component should be built once and not again and again, meaning DRY principle, this means only one component and then we can reuse those components.
+
+## `Props`
+
+In React, `props` (short for properties) are a way to pass data from a parent component to a child component. They are inputs to the child component and allow components to be reusable with different data.
+
+You can think of props as args given to the function.
+
+### Passing props to a component 👇
+
+```jsx
+// this is function receiving the props
+const CardRestro = (props) => {
+  return (
+
+  )
+}
+
+// sending props
+<CardRestro 
+  resName = "something"
+  tags = "some tags"
+/>
+
+// this above properties gets wrapped as an object and passed as props
+
+```
