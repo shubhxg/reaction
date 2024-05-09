@@ -26,14 +26,15 @@ const Header = () => {
   );
 };
 
-const CardRestro = ({
-  name,
-  areaName,
-  cuisines,
-  avgRating,
-  cloudinaryImageId,
-  sla: { slaString },
-}) => {
+const CardRestro = (props) => {
+  const {
+    name,
+    areaName,
+    cuisines,
+    avgRating,
+    cloudinaryImageId,
+    sla: { slaString },
+  } = props;
   // dynamic url grabbed from swiggy images
   const imgURL =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
@@ -67,13 +68,9 @@ const Hero = () => {
       </div>
       <h2>Top restaurants near you</h2>
       <div className="cards-container flex-center">
-        {/* sending cards with props for each card */}
-        <CardRestro {...resDataList[0].info} />
-        <CardRestro {...resDataList[1].info} />
-        <CardRestro {...resDataList[2].info} />
-        <CardRestro {...resDataList[3].info} />
-        <CardRestro {...resDataList[4].info} />
-        <CardRestro {...resDataList[5].info} />
+        {resDataList.map((item, index) => (
+          <CardRestro {...item.info} key={item.id} />
+        ))}
       </div>
     </section>
   );

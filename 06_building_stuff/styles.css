@@ -42,7 +42,6 @@ body {
 .card-restro {
   width: 22rem ;
   border-radius: 0.5rem;
-  background-color: rgb(55, 55, 55);
   padding: 1rem;
   margin: 1rem;
 }
@@ -126,10 +125,14 @@ button {
 .card-restro:hover {
   user-select: none;
   cursor: pointer;
-  border: 1px solid rgb(100, 100, 100);
-  background-color: #424242;
+  border: 1px solid rgb(87, 87, 87);
+  background: rgb(43, 43, 43);
 }
 
 button:hover {
   background-color: #b90248;
+}
+
+img:hover {
+  scale: 1.06;
 }
