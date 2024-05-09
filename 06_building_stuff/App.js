@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { resData } from "./resData";
+import { resDataList } from "./resDataList";
 
 const Header = () => {
   return (
@@ -31,14 +31,18 @@ const CardRestro = ({
   areaName,
   cuisines,
   avgRating,
+  cloudinaryImageId,
   sla: { slaString },
 }) => {
+  // dynamic url grabbed from swiggy images
+  const imgURL =
+    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
   return (
     <div className="card-restro">
       <img
         className="card-img"
         alt="restraunt image"
-        src="https://img.freepik.com/premium-photo/large-bowl-food-with-fish-vegetables_197463-2405.jpg"
+        src={imgURL + cloudinaryImageId}
       />
       <h3>{name}</h3>
       <div className="starSpan">
@@ -47,7 +51,7 @@ const CardRestro = ({
       </div>
       <div className="tagSpan">
         <span>
-          {cuisines.join(", ")} | {areaName}
+          {cuisines.slice(0, 2).join(", ")} | {areaName}
         </span>
       </div>
     </div>
@@ -63,7 +67,13 @@ const Hero = () => {
       </div>
       <h2>Top restaurants near you</h2>
       <div className="cards-container flex-center">
-        <CardRestro {...resData.info} />
+        {/* sending cards with props for each card */}
+        <CardRestro {...resDataList[0].info} />
+        <CardRestro {...resDataList[1].info} />
+        <CardRestro {...resDataList[2].info} />
+        <CardRestro {...resDataList[3].info} />
+        <CardRestro {...resDataList[4].info} />
+        <CardRestro {...resDataList[5].info} />
       </div>
     </section>
   );

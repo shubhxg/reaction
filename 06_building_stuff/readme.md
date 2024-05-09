@@ -1,6 +1,6 @@
 ## Returning multiple elements in JSX
 
-- JSX is stricter than HTML. You have to close tags like `<br />`. 
+- JSX is stricter than HTML. You have to close tags like `<br />`.
 - Your component also can’t return multiple JSX elements. You have to wrap them into a shared parent, like a `<div>...</div>` or an empty `<>...</>` wrapper
 
 ## Styling in JSX
@@ -15,7 +15,7 @@ In order to build any application or webapp, first we should plan out things, We
 
 Each part of application can be built as a `component` separately.
 
-*For example:*
+_For example:_
 
 <details>
 <summary><strong>Header</strong></summary>
@@ -30,7 +30,7 @@ Each part of application can be built as a `component` separately.
 - Search
 - Cards Container
   - Cards
-</details>
+  </details>
 
 <details>
 <summary><strong>Footer</strong></summary>
@@ -69,7 +69,7 @@ const CardRestro = ({property1, property2}) => {
 }
 
 // sending props
-<CardRestro 
+<CardRestro
   property1 = "value1"
   property2 = "value2"
   property3 = "value3"
@@ -93,6 +93,7 @@ This configuration file acts as a `blueprint` for the `UI`, specifying the compo
 Example:
 
 A `config.json` file is sent by Backend to the frontend.
+
 ```jsx
 {
   "title": "Welcome to my App",
@@ -100,10 +101,12 @@ A `config.json` file is sent by Backend to the frontend.
   "buttonText": "Click me"
 }
 ```
+
 Using this `config file` to generate dynamic data on the page.
+
 ```jsx
-import React from 'react';
-import config from './config.json';
+import React from "react";
+import config from "./config.json";
 
 export default MyComponent = () => {
   return (
@@ -122,7 +125,7 @@ A good developer should know when and what type of data should be received or se
 ## Handling nested complex data
 
 ```jsx
-// taking these nested values as props 
+// taking these nested values as props
 
 const CardRestro = ({ name, areaName, cuisines, avgRating, slaString }) => {
   return (
@@ -136,3 +139,37 @@ const CardRestro = ({ name, areaName, cuisines, avgRating, slaString }) => {
 ```
 
 The values inside the resData.info will be spread out
+
+## Accessing dynamic data and rendering it
+
+```jsx
+<div className="cards-container flex-center">
+  {/* sending cards with props for each card */}
+  {/*we are accessing this data from resDataList which is an array of objects*/}
+  <CardRestro {...resDataList[0].info} />
+  <CardRestro {...resDataList[1].info} />
+  <CardRestro {...resDataList[2].info} />
+  <CardRestro {...resDataList[3].info} />
+  <CardRestro {...resDataList[4].info} />
+  <CardRestro {...resDataList[5].info} />
+</div>
+```
+
+For image, I basically concatenated the `swiggyimageurl` with the `cloudinaryImageId` and used that for image.
+
+```jsx
+const imgURL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+return (
+  <div className="card-restro">
+    <img
+      className="card-img"
+      alt="restraunt image"
+      src={imgURL + cloudinaryImageId}
+    />
+);
+```
+
+To make sure my cuisines dont end up too long I sliced it for 2 places and then joined with a comma.
+
+And that's how we achieve dynamic behaviour of website using data from a config file. For now this config file is acting as a restaurant data file `resDataList.js`
