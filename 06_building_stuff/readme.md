@@ -92,7 +92,7 @@ This configuration file acts as a `blueprint` for the `UI`, specifying the compo
 
 Example:
 
-A `config.json` file
+A `config.json` file is sent by Backend to the frontend.
 ```jsx
 {
   "title": "Welcome to my App",
@@ -105,7 +105,7 @@ Using this `config file` to generate dynamic data on the page.
 import React from 'react';
 import config from './config.json';
 
-export default const MyComponent = () => {
+export default MyComponent = () => {
   return (
     <div>
       <h1>{config.title}</h1>
@@ -114,3 +114,25 @@ export default const MyComponent = () => {
   );
 };
 ```
+
+So you write component once and now according to config data `UI will change`.
+
+A good developer should know when and what type of data should be received or sent.
+
+## Handling nested complex data
+
+```jsx
+// taking these nested values as props 
+
+const CardRestro = ({ name, areaName, cuisines, avgRating, slaString }) => {
+  return (
+    // something
+  )
+}
+
+// sending props
+
+<CardRestro {...resData.info} />
+```
+
+The values inside the resData.info will be spread out

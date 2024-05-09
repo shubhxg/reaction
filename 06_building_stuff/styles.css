@@ -47,6 +47,15 @@ body {
   margin: 1rem;
 }
 
+h2 {
+  margin-left: 13rem;
+}
+
+.hero > .search-container {
+  margin-left: 13rem;
+  margin-top: 3rem;
+}
+
 li {
   max-width: 100px;
   list-style: none;

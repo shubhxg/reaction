@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { resData } from "./resData";
 
 const Header = () => {
   return (
@@ -25,8 +26,13 @@ const Header = () => {
   );
 };
 
-const CardRestro = (props) => {
-  const {resName, rating, cuisine} = props;
+const CardRestro = ({
+  name,
+  areaName,
+  cuisines,
+  avgRating,
+  sla: { slaString },
+}) => {
   return (
     <div className="card-restro">
       <img
@@ -34,13 +40,15 @@ const CardRestro = (props) => {
         alt="restraunt image"
         src="https://img.freepik.com/premium-photo/large-bowl-food-with-fish-vegetables_197463-2405.jpg"
       />
-      <h3>{resName}</h3>
+      <h3>{name}</h3>
       <div className="starSpan">
-        <span>⭐ {rating}</span>
-        <span> | 30-40 mins</span>
+        <span>⭐ {avgRating}</span>
+        <span> | {slaString}</span>
       </div>
       <div className="tagSpan">
-        <span>{cuisine}</span>
+        <span>
+          {cuisines.join(", ")} | {areaName}
+        </span>
       </div>
     </div>
   );
@@ -49,45 +57,13 @@ const CardRestro = (props) => {
 const Hero = () => {
   return (
     <section className="hero">
-      <div
-        className="search-container"
-        style={{ "margin-left": "13rem", "margin-top": "3rem" }}
-      >
+      <div className="search-container">
         <input placeholder="Enter food name" type="text" />
         <button>Search</button>
       </div>
-      <h2 style={{ "margin-left": "13rem" }}>Top restaurants near you</h2>
+      <h2>Top restaurants near you</h2>
       <div className="cards-container flex-center">
-        <CardRestro
-          resName="Krishna Bhojnalay"
-          cuisine="North Indian"
-          rating="4.1"
-        />
-        <CardRestro
-          resName="Vaishno Dhaba"
-          cuisine="South Indian, Chinese"
-          rating="3.7"
-        />
-        <CardRestro
-          resName="Host Hotel"
-          cuisine="North Indian, Chinese"
-          rating="4.4"
-        />
-        <CardRestro
-          resName="Pandit Ji Nashta Corner"
-          cuisine="North Indian"
-          rating="3.8"
-        />
-        <CardRestro
-          resName="KFC"
-          cuisine="Chicken, Chinese"
-          rating="4.1"
-        />
-        <CardRestro
-          resName="Crazy Point"
-          cuisine="North Indian, Chinese"
-          rating="4.2"
-        />
+        <CardRestro {...resData.info} />
       </div>
     </section>
   );
