@@ -1,5 +1,5 @@
 import CardRestro from "./CardRestro";
-import { resDataList } from "../data/resDataList";
+import resDataList from "../utils/resDataList";
 
 export default Hero = () => {
   return (

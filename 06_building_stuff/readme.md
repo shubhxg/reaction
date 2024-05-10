@@ -213,3 +213,10 @@ This is because index used as a key is an `anti-pattern`, so if you use index as
 It's a bad practice. So ask your backend developer to send a unique ID for all those data items.
 
 So, `Unique ID` is better than `Index` is better than `no key`.
+
+## Exporting and Importing
+
+1. Default: `export default nameOfSomething` at the end of the file, and `import Something from "path"`
+
+2. Named: multiple exports and imports from single file.
+`export const something`, `import {something} from "path"`

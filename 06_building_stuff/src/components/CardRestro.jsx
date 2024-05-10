@@ -1,3 +1,5 @@
+import { CDN_URL } from "../utils/constants";
+
 export default CardRestro = (props) => {
   const {
     name,
@@ -7,15 +9,12 @@ export default CardRestro = (props) => {
     cloudinaryImageId,
     sla: { slaString },
   } = props;
-  // dynamic url grabbed from swiggy images
-  const imgURL =
-    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
   return (
     <div className="card-restro">
       <img
         className="card-img"
         alt="restraunt image"
-        src={imgURL + cloudinaryImageId}
+        src={CDN_URL + cloudinaryImageId}
       />
       <h3>{name}</h3>
       <div className="starSpan">
