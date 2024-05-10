@@ -173,3 +173,43 @@ return (
 To make sure my cuisines dont end up too long I sliced it for 2 places and then joined with a comma.
 
 And that's how we achieve dynamic behaviour of website using data from a config file. For now this config file is acting as a restaurant data file `resDataList.js`
+
+## Using map to loop over array and render
+
+```jsx
+<div className="cards-container flex-center">
+  {resDataList.map((item) => (
+    <CardRestro {...item?.info} />
+  ))}
+</div>
+```
+
+This above code means map over `resDataList` array and select each `item` and then `render` it's `info` data after `spreading` values and sending as `props`.
+
+## Unique Key for components and why we need them.
+
+Each child component when rendered as a list should have a unique id that represents it. This is to optimize react working and it requires a key to ensure that it is only rendering new component and not rerendering all the components again. 
+
+If there are no ids on the child component, react will `rerender` all the child component when a new child component is rendered, this is why because react does not know which item is unique and It will treat all as same. So always give a unique id to your child components when rendered as list items.
+
+This id is given using `key` can be generated or can be present in the list itself many times.
+
+```jsx
+<div className="cards-container flex-center">
+  {resDataList.map((item) => (
+    <CardRestro {...item?.info} key={item.info.id}/>
+  ))}
+</div>
+```
+
+In this case my list already has a unique key to it, so I am accessing it.
+
+## Why not use index as key values
+
+Try to not use `index` as a `key`, but if you forgot to use a key explicitely then react itself uses `index` as a `key` for `unique id`.
+
+This is because index used as a key is an `anti-pattern`, so if you use index as a key and when you add a new item in the list index changes, and then react gets confused as which component is having which properties.
+
+It's a bad practice. So ask your backend developer to send a unique ID for all those data items.
+
+So, `Unique ID` is better than `Index` is better than `no key`.

@@ -15,7 +15,7 @@ body {
 }
 
 .starSpan {
-  margin-top: 0.1rem;
+  margin-top: 0.3rem;
   margin-right: 0.8rem;
 }
 
@@ -40,6 +40,8 @@ body {
 }
 
 .card-restro {
+  user-select: none;
+  cursor: pointer;
   width: 22rem ;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -123,16 +125,10 @@ button {
 }
 
 .card-restro:hover {
-  user-select: none;
-  cursor: pointer;
-  border: 1px solid rgb(87, 87, 87);
-  background: rgb(43, 43, 43);
+  scale: 1.05;
+  background-color: rgb(51, 51, 51);
 }
 
 button:hover {
   background-color: #b90248;
-}
-
-img:hover {
-  scale: 1.06;
 }
