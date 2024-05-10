@@ -81,8 +81,13 @@ li {
   border-radius: 0.8rem;
 }
 
-.search-container {
-  margin: 2rem;
+.button-container {
+  margin: 2rem 13rem;
+  padding: 2rem;
+}
+
+.filter-svg {
+  margin-right: 0.4rem;
 }
 
 input {
@@ -100,8 +105,13 @@ button {
   background-color: #e5065d;
   border: none;
   color: white;
-  border-radius: 0.2rem;
+  border-radius: 0.25rem;
   cursor: pointer;
+}
+
+.filter-btn {
+  font-weight: 700;
+  border: 1px solid white;
 }
 
 /* flex classes */

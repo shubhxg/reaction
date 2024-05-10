@@ -1,14 +1,13 @@
 import { CDN_URL } from "../utils/constants";
 
-export default CardRestro = (props) => {
-  const {
-    name,
-    areaName,
-    cuisines,
-    avgRating,
-    cloudinaryImageId,
-    sla: { slaString },
-  } = props;
+export default CardRestro = ({
+  name,
+  areaName,
+  cuisines,
+  avgRating,
+  cloudinaryImageId,
+  sla: { slaString },
+}) => {
   return (
     <div className="card-restro">
       <img
