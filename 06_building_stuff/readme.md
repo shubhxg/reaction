@@ -45,7 +45,7 @@ _For example:_
 
 Each component should be built once and not again and again, meaning DRY principle, this means only one component and then we can reuse those components.
 
-## `Props`
+## `Props` 🥠
 
 In React, `props` (short for properties) are a way to pass data from a parent component to a child component. They are inputs to the child component and allow components to be reusable with different data.
 
@@ -82,7 +82,7 @@ const CardRestro = ({property1, property2}) => {
 
 Props are used when we want to `pass data dynamically to a component`.
 
-## Config Driven UI
+## Config Driven UI 🖼️
 
 It is an approach to building user interfaces where the `structure, layout, and behavior` of the `UI components` are defined in a separate `configuration file`, rather than being hard-coded.
 
@@ -133,48 +133,12 @@ const CardRestro = ({ name, areaName, cuisines, avgRating, slaString }) => {
   )
 }
 
-// sending props
+// sending props, The values inside the resData.info will be spread out 
 
-<CardRestro {...resData.info} />
+<CardRestro {...resData?.info} />
 ```
 
-The values inside the resData.info will be spread out
-
-## Accessing dynamic data and rendering it
-
-```jsx
-<div className="cards-container flex-center">
-  {/* sending cards with props for each card */}
-  {/*we are accessing this data from resDataList which is an array of objects*/}
-  <CardRestro {...resDataList[0].info} />
-  <CardRestro {...resDataList[1].info} />
-  <CardRestro {...resDataList[2].info} />
-  <CardRestro {...resDataList[3].info} />
-  <CardRestro {...resDataList[4].info} />
-  <CardRestro {...resDataList[5].info} />
-</div>
-```
-
-For image, I basically concatenated the `swiggyimageurl` with the `cloudinaryImageId` and used that for image.
-
-```jsx
-const imgURL =
-  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
-return (
-  <div className="card-restro">
-    <img
-      className="card-img"
-      alt="restraunt image"
-      src={imgURL + cloudinaryImageId}
-    />
-);
-```
-
-To make sure my cuisines dont end up too long I sliced it for 2 places and then joined with a comma.
-
-And that's how we achieve dynamic behaviour of website using data from a config file. For now this config file is acting as a restaurant data file `resDataList.js`
-
-## Using map to loop over array and render
+## Using map to loop over array and render all the components ➿
 
 ```jsx
 <div className="cards-container flex-center">
@@ -186,7 +150,7 @@ And that's how we achieve dynamic behaviour of website using data from a config 
 
 This above code means map over `resDataList` array and select each `item` and then `render` it's `info` data after `spreading` values and sending as `props`.
 
-## Unique Key for components and why we need them.
+## Unique Key for components and why we need them 🔑
 
 Each child component when rendered as a list should have a unique id that represents it. This is to optimize react working and it requires a key to ensure that it is only rendering new component and not rerendering all the components again. 
 
@@ -204,7 +168,7 @@ This id is given using `key` can be generated or can be present in the list itse
 
 In this case my list already has a unique key to it, so I am accessing it.
 
-## Why not use index as key values
+## Why not use index as key values 🔑
 
 Try to not use `index` as a `key`, but if you forgot to use a key explicitely then react itself uses `index` as a `key` for `unique id`.
 
@@ -214,9 +178,38 @@ It's a bad practice. So ask your backend developer to send a unique ID for all t
 
 So, `Unique ID` is better than `Index` is better than `no key`.
 
-## Exporting and Importing
+## Exporting and Importing 📤
 
 1. Default: `export default nameOfSomething` at the end of the file, and `import Something from "path"`
 
 2. Named: multiple exports and imports from single file.
 `export const something`, `import {something} from "path"`
+
+## Hooks 🪝
+
+JavaScript Utility functions that are created for React library to ease up dom manipulation.
+
+- `useState()`: React Hook that allows you to add state to functional components. State refers to data that can change over time. 
+
+  It takes an initial state value as an argument.
+
+  It also returns an array with two elements: the current state value and a function to update that state value.
+
+  ```jsx
+  const [var, setVar] = useState(data)
+  ```
+  So, in summary, this line initializes a state variable `var` with the value `data` and provides a function `setVar` to update that state variable in the future.
+
+  useState uses the data given to it and creates a state variable that can be updated with a setVar function.
+
+  ```jsx
+  <button className="filter-btn"
+    onClick={() => {
+      setRestaurantData(
+        restaurantData.filter((item) => item.info.avgRating >= 4)
+      );
+    }}
+  >
+  
+  // onClick is a evenHandler function that takes a callback and it updates the function with a filtered array.
+  ```

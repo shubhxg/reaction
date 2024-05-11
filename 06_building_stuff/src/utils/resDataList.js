@@ -136,9 +136,9 @@ export default resDataList = [
         "Mughlai",
         "Desserts",
       ],
-      avgRating: 4.1,
+      avgRating: 3.9,
       parentId: "2438",
-      avgRatingString: "4.1",
+      avgRatingString: "3.9",
       totalRatingsString: "1K+",
       sla: {
         deliveryTime: 27,

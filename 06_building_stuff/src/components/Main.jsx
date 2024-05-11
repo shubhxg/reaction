@@ -1,7 +1,10 @@
 import CardRestro from "./CardRestro";
 import resDataList from "../utils/resDataList";
+import { useState } from "react";
 
 export default Hero = () => {
+  const [restaurantData, setRestaurantData] = useState(resDataList);
+
   return (
     <section className="hero">
       <div className="button-container flex-sa">
@@ -9,7 +12,14 @@ export default Hero = () => {
           <input placeholder="Enter food name" type="text" />
           <button>Search</button>
         </div>
-        <button className="filter-btn">
+        <button
+          className="filter-btn"
+          onClick={() => {
+            setRestaurantData(
+              restaurantData.filter((item) => item.info.avgRating >= 4)
+            );
+          }}
+        >
           <svg
             className="filter-svg"
             xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +36,7 @@ export default Hero = () => {
       </div>
       <h2>Top restaurants near you</h2>
       <div className="cards-container flex-center">
-        {resDataList.map((item) => (
+        {restaurantData.map((item) => (
           <CardRestro {...item?.info} key={item.info.id} />
         ))}
       </div>
