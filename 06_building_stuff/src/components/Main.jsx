@@ -2,7 +2,7 @@ import CardRestro from "./CardRestro";
 import resDataList from "../utils/resDataList";
 import { useState } from "react";
 
-export default Hero = () => {
+export default Main = () => {
   const [restaurantData, setRestaurantData] = useState(resDataList);
 
   return (
