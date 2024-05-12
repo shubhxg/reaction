@@ -196,7 +196,7 @@ JavaScript Utility functions that are created for React library to ease up dom m
     It also returns an array with two elements: the current state value and a function to update that state value.
 
     ```jsx
-    const [var, setVar] = useState(data)
+    const [state, setState] = useState(initialState);
     ```
     So, in summary, this line initializes a state variable `var` with the value `data` and provides a setter function `setVar` to update that state variable in the future.
 
