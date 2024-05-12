@@ -1,9 +1,24 @@
 import CardRestro from "./CardRestro";
-import resDataList from "../utils/resDataList";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { restaurantDataAPIURL } from "../utils/constants";
 
 export default Main = () => {
-  const [restaurantData, setRestaurantData] = useState(resDataList);
+  const [restaurantData, setRestaurantData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const response = await fetch(restaurantDataAPIURL);
+    const resData = await response.json();
+    
+    // updating the state
+    setRestaurantData(
+      resData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
+
 
   return (
     <section className="hero">

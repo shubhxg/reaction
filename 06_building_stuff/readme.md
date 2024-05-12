@@ -133,7 +133,7 @@ const CardRestro = ({ name, areaName, cuisines, avgRating, slaString }) => {
   )
 }
 
-// sending props, The values inside the resData.info will be spread out 
+// sending props, The values inside the resData.info will be spread out
 
 <CardRestro {...resData?.info} />
 ```
@@ -152,7 +152,7 @@ This above code means map over `resDataList` array and select each `item` and th
 
 ## Unique Key for components and why we need them 🔑
 
-Each child component when rendered as a list should have a unique id that represents it. This is to optimize react working and it requires a key to ensure that it is only rendering new component and not rerendering all the components again. 
+Each child component when rendered as a list should have a unique id that represents it. This is to optimize react working and it requires a key to ensure that it is only rendering new component and not rerendering all the components again.
 
 If there are no ids on the child component, react will `rerender` all the child component when a new child component is rendered, this is why because react does not know which item is unique and It will treat all as same. So always give a unique id to your child components when rendered as list items.
 
@@ -161,7 +161,7 @@ This id is given using `key` can be generated or can be present in the list itse
 ```jsx
 <div className="cards-container flex-center">
   {resDataList.map((item) => (
-    <CardRestro {...item?.info} key={item.info.id}/>
+    <CardRestro {...item?.info} key={item.info.id} />
   ))}
 </div>
 ```
@@ -183,33 +183,58 @@ So, `Unique ID` is better than `Index` is better than `no key`.
 1. Default: `export default nameOfSomething` at the end of the file, and `import Something from "path"`
 
 2. Named: multiple exports and imports from single file.
-`export const something`, `import {something} from "path"`
+   `export const something`, `import {something} from "path"`
+
+## Making API calls to fetch data
+
+2 ways but second way is better for UX.
+
+1. `Website loads` -> `API call` -> `render UI`
+2. `Website loads` -> `render skeleton data` -> `API call` -> `re-render data`
 
 ## Hooks 🪝
 
 JavaScript Utility functions that are created for React library to ease up dom manipulation.
 
-1. `useState()`: React utility function / hook that allows you to add state to functional components. State refers to data that can change over time. 
+### 1. `useState()`
 
-    It takes an initial state value as an argument.
+allows you to add state to functional components. State refers to data that can change over time.
 
-    It also returns an array with two elements: the current state value and a function to update that state value.
+It takes an initial state value as an argument and returns an array with two elements: the current state value and a function to update that state value.
 
-    ```jsx
-    const [state, setState] = useState(initialState);
-    ```
-    So, in summary, this line initializes a state variable `var` with the value `data` and provides a setter function `setVar` to update that state variable in the future.
-
-    ```jsx
-    <button className="filter-btn"
-      onClick={() => {
-        setRestaurantData(
-          restaurantData.filter((item) => item.info.avgRating >= 4)
-        );
-      }}
-    >
-  
-    // onClick is a evenHandler function that takes a callback and it updates the function with a filtered array.
-    ```
+```jsx
+const [state, setState] = useState(initialState);
+```
     
-    > Note: Whenever a state variable changes/updates, react rerenders the component.
+So, in summary, this line initializes a state variable `var` with the value `data` and provides a setter function `setVar` to update that state variable in the future.
+
+```jsx
+<button className="filter-btn" 
+  onClick={() => {
+    setRestaurantData(
+      restaurantData.filter((item) => item.info.avgRating >= 4)
+    );
+  }}
+>   
+
+// onClick is a evenHandler function that takes a callback and it updates the function with a filtered array.
+```
+
+> Note: Whenever a state variable changes/updates, react rerenders the component.
+
+### 2. `useEffect()` 
+
+The useEffect hook is called after every render, including the first render.
+
+It is used to handle tasks such as data fetching, subscriptions, or manually changing the DOM from React components. 
+
+
+```jsx
+useEffect(useEffectCallBack, []);
+
+function useEffectCallBack () {
+  // do something
+}
+```
+
+As soon as the render cycle of react component is finished, useEffect() is invoked. So whnever you want to do something after rendering the component then write that code in callback.
