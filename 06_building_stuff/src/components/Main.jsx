@@ -2,23 +2,27 @@ import CardRestro from "./CardRestro";
 import { useState, useEffect } from "react";
 import { restaurantDataAPIURL } from "../utils/constants";
 
-export default Main = () => {
+export default function Main() {
   const [restaurantData, setRestaurantData] = useState([]);
 
   useEffect(() => {
-    fetchData();
+    fetchDataSetData(restaurantDataAPIURL);
   }, []);
 
-  const fetchData = async () => {
-    const response = await fetch(restaurantDataAPIURL);
-    const resData = await response.json();
-    
-    // updating the state
-    setRestaurantData(
-      resData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
+  async function fetchDataSetData(dataAPI) {
+    try {
+      const response = await fetch(dataAPI);
+      const resData = await response.json();
 
+      // updating the state
+      setRestaurantData(
+        resData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <section className="hero">
@@ -57,4 +61,4 @@ export default Main = () => {
       </div>
     </section>
   );
-};
+}
