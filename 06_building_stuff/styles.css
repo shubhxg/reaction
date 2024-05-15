@@ -170,3 +170,10 @@ button {
 button:hover {
   background-color: #b90248;
 }
+
+@media only screen and (max-width: 820px) {
+  .button-container, h2, ul > li {
+    display: none;
+  }
+
+}
