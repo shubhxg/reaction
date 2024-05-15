@@ -1,4 +1,5 @@
 import CardRestro from "./CardRestro";
+import Skeleton from "./Skeleton"
 import { useState, useEffect } from "react";
 import { restaurantDataAPIURL } from "../utils/constants";
 
@@ -13,15 +14,29 @@ export default function Main() {
     try {
       const response = await fetch(dataAPI);
       const resData = await response.json();
-
       // updating the state
       setRestaurantData(
-        resData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        resData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
     } catch (err) {
       console.log(err);
     }
+  }
+
+  if (!restaurantData.length) {
+    return (
+      <section className="hero">
+        <div className="cards-container flex-center">
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+        </div>
+      </section>
+    );
   }
 
   return (

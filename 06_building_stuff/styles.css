@@ -114,6 +114,34 @@ button {
   border: 1px solid white;
 }
 
+.skeleton-card {
+  background-color: rgb(58, 58, 58);
+  user-select: none;
+  cursor: pointer;
+  width: 22rem;
+  height: 12rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 10rem;
+}
+
+.skeleton-text {
+  background-color: rgb(52, 52, 52);
+  user-select: none;
+  cursor: pointer;
+  width: 18rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.skeleton-container {
+  padding: 0rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* flex classes */
 
 .flex-center {

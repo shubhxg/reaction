@@ -238,3 +238,9 @@ function useEffectCallBack () {
 ```
 
 As soon as the render cycle of react component is finished, useEffect() is invoked. So whnever you want to do something after rendering the component then write that code in callback.
+
+## Shimmer UI / Skeleton UI
+
+A type of fake card that is rendered until the data is fetched, better UX.
+
+Load the page -> Render Skeleton UI -> Fetch Data -> Render data.
