@@ -16,3 +16,5 @@
 - Scaling can be achieved by running multiple instances of individual microservices, rather than scaling the entire application.
 - Microservices architectures promote modularity and scalability.
 - Each microservice can be run on a specific port number.
+
+https://youtu.be/gnS5B90K_YY?si=6mdttU4huZj2PMNB
