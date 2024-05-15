@@ -5,6 +5,7 @@ import { restaurantDataAPIURL } from "../utils/constants";
 
 export default function Main() {
   const [restaurantData, setRestaurantData] = useState([]);
+  const [h2, seth2] = useState("Top restaurants near you");
 
   useEffect(() => {
     fetchDataSetData(restaurantDataAPIURL);
@@ -48,6 +49,8 @@ export default function Main() {
             setRestaurantData(
               restaurantData.filter((item) => item.info.avgRating >= 4)
             );
+            seth2("Filtered for best experience!")
+
           }}
         >
           <svg
@@ -64,7 +67,7 @@ export default function Main() {
           Filter by Top Rated Restaurants
         </button>
       </div>
-      <h2>Top restaurants near you</h2>
+      <h2>{h2}</h2>
       <div className="cards-container flex-center">
         {restaurantData.map((item) => (
           <CardRestro {...item?.info} key={item.info.id} />
