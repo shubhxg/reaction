@@ -1,5 +1,5 @@
 import CardRestro from "./CardRestro";
-import Skeleton from "./Skeleton"
+import Skeleton from "./Skeleton";
 import { useState, useEffect } from "react";
 import { restaurantDataAPIURL } from "../utils/constants";
 
@@ -24,22 +24,18 @@ export default function Main() {
     }
   }
 
-  if (!restaurantData.length) {
-    return (
-      <section className="hero">
-        <div className="cards-container flex-center">
-          <Skeleton />
-          <Skeleton />
-          <Skeleton />
-          <Skeleton />
-          <Skeleton />
-          <Skeleton />
-        </div>
-      </section>
-    );
-  }
-
-  return (
+  return !restaurantData.length ? (
+    <section className="hero">
+      <div className="cards-container flex-center">
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+      </div>
+    </section>
+  ) : (
     <section className="hero">
       <div className="button-container flex-sa">
         <div>
