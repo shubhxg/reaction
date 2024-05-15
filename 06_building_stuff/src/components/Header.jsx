@@ -1,6 +1,6 @@
 import { LOGO_URL } from "../utils/constants";
 
-export default Header = () => {
+export default function Header () {
   return (
     <header className="header">
       <div className="navContainer flex-sa">

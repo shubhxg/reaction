@@ -1,13 +1,13 @@
 import { CDN_URL } from "../utils/constants";
 
-export default CardRestro = ({
+export default function CardRestro({
   name,
   areaName,
   cuisines,
   avgRating,
   cloudinaryImageId,
   sla: { slaString },
-}) => {
+}) {
   return (
     <div className="card-restro">
       <img
@@ -28,4 +28,4 @@ export default CardRestro = ({
       </div>
     </div>
   );
-};
+}
