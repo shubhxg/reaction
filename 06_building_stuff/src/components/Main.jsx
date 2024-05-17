@@ -5,6 +5,7 @@ import { restaurantDataAPIURL } from "../utils/constants";
 
 export default function Main() {
   const [restaurantData, setRestaurantData] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
   const [h2, seth2] = useState("Top restaurants near you");
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -16,11 +17,12 @@ export default function Main() {
     try {
       const response = await fetch(dataAPI);
       const dataJSON = await response.json();
-      // updating the state
-      setRestaurantData(
-        dataJSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
+      const restData =
+        dataJSON?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+
+      setRestaurantData(restData);
+      setFilteredList(restData);
     } catch (err) {
       console.log(err);
     }
@@ -46,8 +48,8 @@ export default function Main() {
           />
           <button
             onClick={() => {
-              if (restaurantData.length) {
-                setRestaurantData(
+              if (searchTerm) {
+                setFilteredList(
                   restaurantData.filter((item) =>
                     item?.info?.name
                       .toLowerCase()
@@ -56,6 +58,10 @@ export default function Main() {
                       : ""
                   )
                 );
+                seth2("Searched food 🔍🤤🍕")
+              } else {
+                setFilteredList(restaurantData);
+                seth2("Enter a valid food name! 😲😖")
               }
             }}
           >
@@ -65,10 +71,10 @@ export default function Main() {
         <button
           className="filter-btn"
           onClick={() => {
-            setRestaurantData(
-              restaurantData.filter((item) => item.info.avgRating >= 4)
+            setFilteredList(
+              restaurantData.filter((item) => item.info.avgRating >= 4.5)
             );
-            seth2("Filtered for best experience!");
+            seth2("Filtered for best experience! 🤩✨");
           }}
         >
           <svg
@@ -87,7 +93,7 @@ export default function Main() {
       </div>
       <h2>{h2}</h2>
       <div className="cards-container flex-center">
-        {restaurantData.map((item) => (
+        {filteredList.map((item) => (
           <CardRestro {...item?.info} key={item.info.id} />
         ))}
       </div>
