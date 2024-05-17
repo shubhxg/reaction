@@ -20,7 +20,7 @@ export default function Header() {
               onClick={() => {
                 loginButton === "Login"
                   ? setLoginButton("Logout")
-                  : setLoginButton("Login"); 
+                  : setLoginButton("Login");
                 homeButton === "Home"
                   ? setHomeButton("Welcome!")
                   : setHomeButton("Home");

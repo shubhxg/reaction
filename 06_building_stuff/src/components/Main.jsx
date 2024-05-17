@@ -6,6 +6,7 @@ import { restaurantDataAPIURL } from "../utils/constants";
 export default function Main() {
   const [restaurantData, setRestaurantData] = useState([]);
   const [h2, seth2] = useState("Top restaurants near you");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetchDataSetData(restaurantDataAPIURL);
@@ -14,10 +15,10 @@ export default function Main() {
   async function fetchDataSetData(dataAPI) {
     try {
       const response = await fetch(dataAPI);
-      const resData = await response.json();
+      const dataJSON = await response.json();
       // updating the state
       setRestaurantData(
-        resData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        dataJSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
     } catch (err) {
@@ -29,19 +30,37 @@ export default function Main() {
     <section className="hero">
       <div className="cards-container flex-center">
         <Skeleton />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
       </div>
     </section>
   ) : (
     <section className="hero">
       <div className="button-container flex-sa">
         <div>
-          <input placeholder="Enter food name" type="text" />
-          <button>Search</button>
+          <input
+            placeholder="Enter food name"
+            type="text"
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+            }}
+            value={searchTerm}
+          />
+          <button
+            onClick={() => {
+              if (restaurantData.length) {
+                setRestaurantData(
+                  restaurantData.filter((item) =>
+                    item?.info?.name
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase())
+                      ? item
+                      : ""
+                  )
+                );
+              }
+            }}
+          >
+            Search
+          </button>
         </div>
         <button
           className="filter-btn"
@@ -49,8 +68,7 @@ export default function Main() {
             setRestaurantData(
               restaurantData.filter((item) => item.info.avgRating >= 4)
             );
-            seth2("Filtered for best experience!")
-
+            seth2("Filtered for best experience!");
           }}
         >
           <svg

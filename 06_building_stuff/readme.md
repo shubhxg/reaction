@@ -205,34 +205,33 @@ It takes an initial state value as an argument and returns an array with two ele
 ```jsx
 const [state, setState] = useState(initialState);
 ```
-    
+
 So, in summary, this line initializes a state variable `var` with the value `data` and provides a setter function `setVar` to update that state variable in the future.
 
 ```jsx
-<button className="filter-btn" 
+<button className="filter-btn"
   onClick={() => {
     setRestaurantData(
       restaurantData.filter((item) => item.info.avgRating >= 4)
     );
   }}
->   
+>
 
 // onClick is a evenHandler function that takes a callback and it updates the function with a filtered array.
 ```
 
 > Note: Whenever a state variable changes/updates, react rerenders the component.
 
-### 2. `useEffect()` 
+### 2. `useEffect()`
 
 The useEffect hook is called after every render, including the first render.
 
-It is used to handle tasks such as data fetching, subscriptions, or manually changing the DOM from React components. 
-
+It is used to handle tasks such as data fetching, subscriptions, or manually changing the DOM from React components.
 
 ```jsx
 useEffect(useEffectCallBack, []);
 
-function useEffectCallBack () {
+function useEffectCallBack() {
   // do something
 }
 ```
@@ -241,6 +240,38 @@ As soon as the render cycle of react component is finished, useEffect() is invok
 
 ## Shimmer UI / Skeleton UI
 
-A type of fake card that is rendered until the data is fetched, better UX.
+A type of fake type of UI that is rendered until the data is fetched and rendered, better UX.
 
 Load the page -> Render Skeleton UI -> Fetch Data -> Render data.
+
+## Conditional rendering
+```jsx
+return if_condition_is_true 
+  ? (return_this) : (else_return_this);
+
+
+// if else-if else conditional rendering
+return if_condition_is_true 
+  ? (return_this) : else_if_this_second_condition_is_true 
+  ? (return_this) : (else_return_this)
+  // and so on 
+```
+
+
+## Making the input box work
+
+```jsx
+<input
+  placeholder="Enter food name"
+  type="text"
+  onChange={(e) => {
+    setSearchTerm(e.target.value);
+  }}
+  value={searchTerm}
+/>
+```
+we get the value from the input box using `onChange()` method and we use that to update the `value` of the input box.
+
+`onChange()` method takes a callback(e) where e is the event which is used to get the target's value.
+
+
