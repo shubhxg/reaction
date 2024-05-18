@@ -21,15 +21,17 @@ export default function Main() {
         dataJSON?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
 
-      const data =
-        restData.length % 3 === 0
-          ? restData
-          : restData.slice(0, Math.floor(restData.length / 3) * 3);
-      setRestaurantData(data);
-      setFilteredList(data);
+      setRestaurantData(sliceData(restData));
+      setFilteredList(sliceData(restData));
     } catch (err) {
       console.log(err);
     }
+  }
+
+  const sliceData = (restData) => {
+    return restData.length % 3 === 0
+        ? restData
+        : restData.slice(0, Math.floor(restData.length / 3) * 3)
   }
 
   return !restaurantData.length ? (
