@@ -21,8 +21,12 @@ export default function Main() {
         dataJSON?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
 
-      setRestaurantData(restData);
-      setFilteredList(restData);
+      const data =
+        restData.length % 3 === 0
+          ? restData
+          : restData.slice(0, Math.floor(restData.length / 3) * 3);
+      setRestaurantData(data);
+      setFilteredList(data);
     } catch (err) {
       console.log(err);
     }
@@ -58,10 +62,10 @@ export default function Main() {
                       : ""
                   )
                 );
-                seth2("Searched food 🔍🤤🍕")
+                seth2("Searched food 🔍🤤🍕");
               } else {
                 setFilteredList(restaurantData);
-                seth2("Enter a valid food name! 😲😖")
+                seth2("Enter a valid food name! 😲😖");
               }
             }}
           >
