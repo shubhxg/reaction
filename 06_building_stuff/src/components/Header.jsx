@@ -9,7 +9,9 @@ export default function Header() {
     <header className="header">
       <div className="navContainer flex-sa">
         <div className="logocontainer">
-          <img className="logo" src={LOGO_URL} alt="Logo" />
+          <a href="/">
+            <img className="logo" src={LOGO_URL} alt="Logo" />
+          </a>
         </div>
         <div className="nav-items">
           <ul className="flex-center" style={{ gap: "2rem" }}>

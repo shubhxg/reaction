@@ -18,7 +18,7 @@ export default function Main() {
       const response = await fetch(dataAPI);
       const dataJSON = await response.json();
       const restData =
-        dataJSON?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        dataJSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
 
       setRestaurantData(sliceData(restData));
