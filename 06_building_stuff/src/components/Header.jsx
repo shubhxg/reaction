@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export default function Header() {
   const [loginButton, setLoginButton] = useState("Login");
-  const [homeButton, setHomeButton] = useState("Home");
 
   return (
     <header className="header">
@@ -15,17 +14,15 @@ export default function Header() {
         </div>
         <div className="nav-items">
           <ul className="flex-center" style={{ gap: "2rem" }}>
-            <li>{homeButton}</li>
-            <li>Contact</li>
+            <a href="/contactus">
+              <li style={{ "max-width": "7rem" }}>Contact Us</li>
+            </a>
             <li>Cart</li>
             <button
               onClick={() => {
                 loginButton === "Login"
                   ? setLoginButton("Logout")
                   : setLoginButton("Login");
-                homeButton === "Home"
-                  ? setHomeButton("Welcome!")
-                  : setHomeButton("Home");
               }}
             >
               {loginButton}
