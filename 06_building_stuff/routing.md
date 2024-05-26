@@ -52,3 +52,30 @@ When the URL matches `/route1`, the <Component1 /> component will be rendered.
 ## Which router should we use?
 
 `createBrowserRouter` is the recommended one by React Router for basic default routing.
+
+## Handling errors
+
+Created a new component for the error page.
+
+
+```jsx
+import { useRouteError } from "react-router-dom";
+
+export default function Error() {
+  const err = useRouteError();
+  return (
+    <div>
+    <h1>Error Occurred</h1>
+    <p>Sorry, an unexpected error has occurred.</p>
+    <p>{err?.status} {err?.statusText}</p>
+    </div>
+  );
+}
+
+// App.js
+
+{ path: "/", element: <AppLayout />, errorElement: <Error /> },
+
+```
+`useRouteError` is a hook used to get the error object from the current route.
+
