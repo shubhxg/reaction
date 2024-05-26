@@ -30,9 +30,9 @@ export default function Main() {
 
   const sliceData = (restData) => {
     return restData.length % 3 === 0
-        ? restData
-        : restData.slice(0, Math.floor(restData.length / 3) * 3)
-  }
+      ? restData
+      : restData.slice(0, Math.floor(restData.length / 3) * 3);
+  };
 
   return !restaurantData.length ? (
     <section className="hero">

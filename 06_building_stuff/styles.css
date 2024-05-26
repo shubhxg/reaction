@@ -171,6 +171,11 @@ button {
   flex: 1;
 }
 
+a:link, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
 .card-restro:hover {
   scale: 1.05;
   background-color: rgb(40, 40, 40);
