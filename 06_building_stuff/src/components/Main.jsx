@@ -9,11 +9,7 @@ export default function Main() {
   const [h2, seth2] = useState("Top restaurants near you");
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    fetchDataSetData(restaurantDataAPIURL);
-  }, []);
-
-  async function fetchDataSetData(dataAPI) {
+async function fetchDataSetData(dataAPI) {
     try {
       const response = await fetch(dataAPI);
       const dataJSON = await response.json();
@@ -33,6 +29,10 @@ export default function Main() {
       ? restData
       : restData.slice(0, Math.floor(restData.length / 3) * 3);
   };
+
+  useEffect(() => {
+    fetchDataSetData(restaurantDataAPIURL);
+  }, []);
 
   return !restaurantData.length ? (
     <section className="hero">
