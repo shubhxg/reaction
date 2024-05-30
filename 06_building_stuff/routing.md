@@ -41,7 +41,7 @@ ReactDOM.createRoot(document.getElementById("root"))
 - The `createBrowserRouter` function takes an array of route objects as its argument. Each route object defines a path and the component that should be rendered when the URL matches that path.
 
 - `{ path: "/route1", element: <Component1 /> } ` is route object that with path `/route1`.
-When the URL matches `/route1`, the <Component1 /> component will be rendered.
+  When the URL matches `/route1`, the <Component1 /> component will be rendered.
 
 - The `<RouterProvider />` is a component associates the router instance (appRouter created with createBrowserRouter) with your React component tree.
 
@@ -56,7 +56,6 @@ When the URL matches `/route1`, the <Component1 /> component will be rendered.
 ## Handling errors
 
 Created a new component for the error page.
-
 
 ```jsx
 import { useRouteError } from "react-router-dom";
@@ -77,5 +76,56 @@ export default function Error() {
 { path: "/", element: <AppLayout />, errorElement: <Error /> },
 
 ```
+
 `useRouteError` is a hook used to get the error object from the current route.
 
+## Children Routes
+
+In many applications, you often have a common layout or component that should be rendered for multiple routes. For example, you might have a `Sidebar` and a `Header` component that should be visible across multiple pages.
+
+By using the Outlet, you can render these shared components as part of the parent route, while the content specific to each child route is rendered inside the `Outlet`
+
+<Outlet /> serves as a placeholder for rendering the child route components within the parent component's UI.
+
+```jsx
+import { Outlet } from "react-router-dom";
+
+function AppLayout() {
+  return (
+    <div className="app">
+      <Header />
+      <Outlet />
+    </div>
+  );
+}
+
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Main />,
+      },
+      {
+        path: "/contactus",
+        element: <ContactUs />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
+    errorElement: <Error />,
+  },
+]);
+```
+
+Explanation: `<Outlet />` component is a placeholder where the child route components will be rendered.
+
+When the user navigates to the root path `/`, the `Main` component will be rendered inside the `Outlet` of AppLayout.
+
+When the user navigates to `/contactus`, the `ContactUs` component will be rendered inside the `Outlet` of AppLayout.
+
+When the user navigates to `/about`, the About component will be rendered inside the `Outlet` of AppLayout.
