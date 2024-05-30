@@ -1,5 +1,6 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [loginButton, setLoginButton] = useState("Login");
@@ -8,15 +9,15 @@ export default function Header() {
     <header className="header">
       <div className="navContainer flex-sa">
         <div className="logocontainer">
-          <a href="/">
+          <Link to="/">
             <img className="logo" src={LOGO_URL} alt="Logo" />
-          </a>
+          </Link>
         </div>
         <div className="nav-items">
           <ul className="flex-center" style={{ gap: "2rem" }}>
-            <a href="/contactus">
-              <li style={{ "max-width": "7rem" }}>Contact Us</li>
-            </a>
+            <Link to="/contactus">
+              <li style={{ maxWidth: "7rem" }}>Contact Us</li>
+            </Link>
             <li>Cart</li>
             <button
               onClick={() => {
