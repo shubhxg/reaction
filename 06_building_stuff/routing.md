@@ -129,3 +129,39 @@ When the user navigates to the root path `/`, the `Main` component will be rende
 When the user navigates to `/contactus`, the `ContactUs` component will be rendered inside the `Outlet` of AppLayout.
 
 When the user navigates to `/about`, the About component will be rendered inside the `Outlet` of AppLayout.
+
+## Types of Routing
+
+### 1. Server Side:
+
+- In server-side routing, the server handles the routing logic.
+
+- When a user requests a specific URL, the server receives the request, processes it, and returns the HTML, CSS, and JavaScript files specific for that route.
+
+- The server is responsible for rendering the entire page and sending the fully rendered HTML to the client's browser.
+
+- This approach is commonly used in traditional server-rendered applications, such as those built with `PHP, Ruby on Rails, or server-side frameworks like Express.js (Node.js)`.
+
+- Good for `SEO`.
+
+- Slower page loading due to the need to fetch the entire HTML from the server.
+
+### 2. Client Side / SPA:
+
+- In this approach, The routing logic is handled by the client-side JavaScript code running in the browser.
+
+- When the application is initially loaded, the server sends a single HTML file along with the JavaScript bundle containing the entire application.
+
+- After the initial load, the JavaScript manages the routing and rendering components.
+
+- When the user navigates to a different URL, the JavaScript code updates the browser's URL and re-renders the appropriate components without full page refresh from the server.
+
+- Client-side routing is commonly used in modern Single Page Applications (SPAs) built with frameworks like `React, Angular, Vue.js, or client-side libraries like React Router or Vue Router`.
+
+- Better for `UX`, Bad for `SEO`.
+
+## Dynamic Routing
+
+```jsx
+{ path: "/res/:resId", element: <MenuPage />, }
+```

@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import ContactUs from "./components/ContactUs";
 import About from "./components/About";
 import Error from "./components/Error";
+import MenuPage from "./components/MenuPage";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 function AppLayout() {
@@ -33,13 +34,15 @@ const appRouter = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+      {
+        path: "/res/:resId",
+        element: <MenuPage />,
+      }
     ],
     errorElement: <Error />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
     <RouterProvider router={appRouter} />
-  </React.StrictMode>
 );

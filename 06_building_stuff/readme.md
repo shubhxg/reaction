@@ -238,6 +238,14 @@ function useEffectCallBack() {
 
 As soon as the render cycle of react component is finished, useEffect() is invoked. So whnever you want to do something after rendering the component then write that code in callback.
 
+- If there is `no dependency array`, then the callback is `invoked after every render cycle of components`.
+
+- If there is a `dependency array`, then the callback is `invoked only when the dependency changes`.
+
+- If there is a `empty dependency array`, then the callback is `invoked only once after the first render cycle`.
+
+
+
 ## Shimmer UI / Skeleton UI
 
 A type of fake type of UI that is rendered until the data is fetched and rendered, better UX.
@@ -273,5 +281,3 @@ return if_condition_is_true
 we get the value from the input box using `onChange()` method and we use that to update the `value` of the input box.
 
 `onChange()` method takes a callback(e) where e is the event which is used to get the target's value.
-
-
