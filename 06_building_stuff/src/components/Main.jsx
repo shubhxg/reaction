@@ -2,6 +2,7 @@ import CardRestro from "./CardRestro";
 import Skeleton from "./Skeleton";
 import { useState, useEffect } from "react";
 import { restaurantDataAPIURL } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 export default function Main() {
   const [restaurantData, setRestaurantData] = useState([]);
@@ -9,11 +10,11 @@ export default function Main() {
   const [h2, seth2] = useState("Top restaurants near you");
   const [searchTerm, setSearchTerm] = useState("");
 
-useEffect(() => {
+  useEffect(() => {
     fetchDataSetData(restaurantDataAPIURL);
   }, []);
 
-async function fetchDataSetData(dataAPI) {
+  async function fetchDataSetData(dataAPI) {
     try {
       const response = await fetch(dataAPI);
       const dataJSON = await response.json();
@@ -100,7 +101,9 @@ async function fetchDataSetData(dataAPI) {
       <h2>{h2}</h2>
       <div className="cards-container flex-center">
         {filteredList.map((item) => (
-          <CardRestro {...item?.info} key={item.info.id} />
+          <Link to={"/res/" + item.info.id} key={item.info.id}>
+            <CardRestro {...item?.info} />
+          </Link>
         ))}
       </div>
     </section>

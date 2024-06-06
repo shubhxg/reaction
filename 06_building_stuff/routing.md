@@ -165,3 +165,7 @@ When the user navigates to `/about`, the About component will be rendered inside
 ```jsx
 { path: "/res/:resId", element: <MenuPage />, }
 ```
+## useParams
+
+`useParams` is a hook that allows you to access the dynamic parameters from the current route. It returns an object with the parameter names as keys and their values as values.
+

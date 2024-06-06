@@ -17,7 +17,7 @@ export default function CardRestroMenu(props) {
         <span>{isVeg ? "🟢 Veg" : "🔴 Non Veg"}</span>
         <h4>{name}</h4>
         <h5>{price ? `₹${price / 100}` : ""}</h5>
-        <span>{rating}</span>
+        <span>⭐ {rating}</span>
       </div>
       <img src={MENU_IMG_URL + imageId} alt="cuisine image" style={{ borderRadius: "0.5rem"}}/>
     </div>

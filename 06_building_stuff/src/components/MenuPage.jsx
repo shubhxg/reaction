@@ -2,21 +2,25 @@ import { useEffect, useState } from "react";
 import { MENU_URL } from "../utils/constants";
 import Skeleton from "../components/Skeleton";
 import CardRestroMenu from "../components/CardRestroMenu";
+import { useParams } from "react-router-dom";
 
 export default function MenuPage() {
-  const [menuData, setMenuData] = useState([]);
-  const [topPicks, setTopPicks] = useState([]);
   const [recommendedData, setRecommendedData] = useState([]);
+  let [resName, setResName] = useState("");
+  const { resId } = useParams();
+  const URL = MENU_URL + resId;
+
 
   useEffect(() => {
     fetchSetMenuData();
   }, []);
 
   async function fetchSetMenuData() {
-    const data = await fetch(MENU_URL);
+    const data = await fetch(URL);
     const menuInfo = await data.json();
+    setResName(menuInfo?.data?.cards[0].card.card.text);
     setRecommendedData(
-      menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
+      menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]
         ?.card?.card.itemCards
     );
   }
@@ -29,10 +33,10 @@ export default function MenuPage() {
     </section>
   ) : (
     <div className="menuContainer">
-      <h1 style={{ margin: "1rem" }}>Menu</h1>
+      <h1 style={{ margin: "1rem" }}>{resName}</h1>
       <h3 style={{ margin: "0.2rem" }}>Top Picks</h3>
       {recommendedData.map((item) => (
-        <CardRestroMenu {...item?.card?.info} key={item.card.info.id}/>
+        <CardRestroMenu {...item?.card?.info} key={item.card.info.id} />
       ))}
     </div>
   );
