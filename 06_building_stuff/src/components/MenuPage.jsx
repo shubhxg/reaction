@@ -16,13 +16,16 @@ export default function MenuPage() {
   }, []);
 
   async function fetchSetMenuData() {
-    const data = await fetch(URL);
-    const menuInfo = await data.json();
-    setResName(menuInfo?.data?.cards[0].card.card.text);
-    setRecommendedData(
-      menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]
-        ?.card?.card.itemCards
-    );
+    try {
+      const data = await fetch(URL);
+      const menuInfo = await data.json();
+      setResName(menuInfo?.data?.cards[0].card.card.text);
+      setRecommendedData(
+        menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card.itemCards
+      );
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return !recommendedData.length ? (
