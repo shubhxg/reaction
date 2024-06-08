@@ -281,3 +281,30 @@ return if_condition_is_true
 we get the value from the input box using `onChange()` method and we use that to update the `value` of the input box.
 
 `onChange()` method takes a callback(e) where e is the event which is used to get the target's value.
+
+## Class Based Components
+
+```jsx
+class ClassName extends React.Component {
+  render() {
+    return (<div></div>)
+  }
+}
+
+```
+
+### Receiving props to a class based component
+```jsx
+class ClassName extends React.Component {
+  constructor(props) {
+    super(props); // this is required to receive props because we are extending React.Component 
+    // super refers to the parent class's constructor. In React, the parent class is `React.Component`
+    // If you don't call super(props), this.props will be undefined in the constructor
+
+  }
+
+  render() {
+    return (<div></div>)
+  }
+}
+```

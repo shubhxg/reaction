@@ -21,7 +21,7 @@ export default function MenuPage() {
       const menuInfo = await data.json();
       setResName(menuInfo?.data?.cards[0].card.card.text);
       setRecommendedData(
-        menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card.itemCards
+        menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card?.itemCards
       );
     } catch (err) {
       console.log(err);
