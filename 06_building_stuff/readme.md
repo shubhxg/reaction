@@ -284,6 +284,9 @@ we get the value from the input box using `onChange()` method and we use that to
 
 ## Class Based Components
 
+We create instance of a class and then use it to render jsx.
+
+
 ```jsx
 class ClassName extends React.Component {
   render() {
@@ -305,6 +308,26 @@ class ClassName extends React.Component {
 
   render() {
     return (<div></div>)
+  }
+}
+```
+### Creating state in class based components
+
+```jsx
+class ClassName extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count1: 0,
+      count2: 10,
+    }
+  }
+
+  render() {
+    const {count1, count2} = this.state;
+
+    return (<div>{count1, count2}</div>)
   }
 }
 ```
