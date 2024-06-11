@@ -406,11 +406,29 @@ It has two phases:
 ### Mounting Cycle
 
 **Render phase**
-- constructor()
-- render()
+- `constructor()`
+- `render()`
 
 
 **Commit phase**
 - react updates the dom & refs in a single batch
-- componentDidMount()
+- `componentDidMount()` - called once the component is mounted fully.
 
+### Update Cycle
+**Render phase**
+- `render()`
+
+**Commit phase**
+- react updates the dom
+- `componentDidUpdate()` - called after component is updated.
+
+### Unmounting cycle
+- `componentWillUnmount()` - called just before the component is unmounted.
+
+## Is react lifecycle method still used in modern react? and Is useEffect similar to componentDidMount, and componentDidUpdate()
+
+1. Do not compare `useEffect` to `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`. They are not similar.
+
+2. `Mounting` and `Updating` both are different parts as Mounting is initially done and updating is done when DOM needs to be updated with new changed data.
+
+3. Modern react does not use render lifecycle.

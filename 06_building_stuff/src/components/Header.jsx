@@ -18,6 +18,9 @@ export default function Header() {
             <Link to="/contactus">
               <li style={{ maxWidth: "7rem" }}>Contact Us</li>
             </Link>
+            <Link to="/about">
+              <li style={{ maxWidth: "7rem" }}>About Us</li>
+            </Link>
             <li>Cart</li>
             <button
               onClick={() => {
