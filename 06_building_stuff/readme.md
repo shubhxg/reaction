@@ -396,6 +396,8 @@ React optimizes the rendering process by `batching` `multiple calls into a singl
 
 This is because DOM manipulation is slow and long process and react does not want to do it multiple times.
 
+![React lifecycle methods diagram](https://github.com/shubhxg/reaction/assets/69891912/6cd9fcaa-c81b-4641-affa-e5e084268fb8)
+
 
 It has two phases:
 1. Render phase
