@@ -244,8 +244,6 @@ As soon as the render cycle of react component is finished, useEffect() is invok
 
 - If there is a `empty dependency array`, then the callback is `invoked only once after the first render cycle`.
 
-
-
 ## Shimmer UI / Skeleton UI
 
 A type of fake type of UI that is rendered until the data is fetched and rendered, better UX.
@@ -253,18 +251,18 @@ A type of fake type of UI that is rendered until the data is fetched and rendere
 Load the page -> Render Skeleton UI -> Fetch Data -> Render data.
 
 ## Conditional rendering
-```jsx
-return if_condition_is_true 
-  ? (return_this) : (else_return_this);
 
+```jsx
+return if_condition_is_true ? return_this : else_return_this;
 
 // if else-if else conditional rendering
-return if_condition_is_true 
-  ? (return_this) : else_if_this_second_condition_is_true 
-  ? (return_this) : (else_return_this)
-  // and so on 
+return if_condition_is_true
+  ? return_this
+  : else_if_this_second_condition_is_true
+  ? return_this
+  : else_return_this;
+// and so on
 ```
-
 
 ## Making the input box work
 
@@ -278,6 +276,7 @@ return if_condition_is_true
   value={searchTerm}
 />
 ```
+
 we get the value from the input box using `onChange()` method and we use that to update the `value` of the input box.
 
 `onChange()` method takes a callback(e) where e is the event which is used to get the target's value.
@@ -286,32 +285,31 @@ we get the value from the input box using `onChange()` method and we use that to
 
 We create instance of a class and then use it to render jsx.
 
-
 ```jsx
 class ClassName extends React.Component {
   render() {
-    return (<div></div>)
+    return <div></div>;
   }
 }
-
 ```
 
 ### Receiving props to a class based component
+
 ```jsx
 class ClassName extends React.Component {
   constructor(props) {
-    super(props); // this is required to receive props because we are extending React.Component 
+    super(props); // this is required to receive props because we are extending React.Component
     // super refers to the parent class's constructor. In React, the parent class is `React.Component`
     // If you don't call super(props), this.props will be undefined in the constructor
-
   }
 
   render() {
-    return (<div></div>)
+    return <div></div>;
   }
 }
 ```
-### Creating state in class based components
+
+### Creating state in class based components and setting the state
 
 ```jsx
 class ClassName extends React.Component {
@@ -321,13 +319,98 @@ class ClassName extends React.Component {
     this.state = {
       count1: 0,
       count2: 10,
-    }
+    };
   }
 
   render() {
-    const {count1, count2} = this.state;
-
-    return (<div>{count1, count2}</div>)
+    const { count1, count2 } = this.state;
+    return (
+      <div>
+        {(count1, count2)}
+        <button
+          // using setState() method to update the state
+          onClick={() => {
+            this.setState({ count: count + 1 });
+          }}
+        >
+          Add +1
+        </button>
+      </div>
+    );
   }
 }
 ```
+
+## Component Life Cycle
+
+1. `constructor()` is called when the component is mounted.
+2. `render()` is called after constructor().
+
+if there are children components inside a component then, parent constructor -> parent render -> child constructor -> child render -> child componentDidMount() -> parent componentDidMount()
+
+```jsx
+constructor(props) {
+    super(props);
+    this.state = {}
+  }
+
+  componentDidMount() {
+    fetch(//api); // this is called after the component is mounted and rendered
+  }
+
+  render() {
+    return (
+      <div className="about-us">
+        <h1>About Us Class Component!</h1>
+        <UserClass
+          name={"Shubh Sharma (Class)"}
+          location={"Bareilly"}
+          contact={"@shubhstwt"}
+          email={"mail.shubhsharma19@gmail.com"}
+        />
+      </div>
+    );
+  }
+```
+## Why we need componentDidMount()?
+
+Used to make API calls to fetch data, because it is called after the component is mounted and rendered. This is why react always calls it after the component is rendered and if there are multiple childs being mounted then it is called after all the childs are mounted.
+
+## What is there are multiple child components being present inside parent component?
+
+In sequence:
+1. parent `constructor` 
+2. parent `render` 
+3. child1 `constructor`
+4. child1 `render` 
+5. child2 `constructor`
+6. child2 `render`
+7. child1 `componentDidMount()` 
+8. child2 `componentDidMount()`
+9. parent `componentDidMount()`
+
+
+## Phases of lifecycle of react components
+
+React optimizes the rendering process by `batching` `multiple calls into a single update`. Meaning that react does not update the dom after every setState() call, but it batches multiple setState() calls into a single update.
+
+This is because DOM manipulation is slow and long process and react does not want to do it multiple times.
+
+![React lifecycle methods diagram](https://github.com/shubhxg/reaction/assets/69891912/6cd9fcaa-c81b-4641-affa-e5e084268fb8)
+
+
+It has two phases:
+1. Render phase
+2. Commit phase
+
+### Mounting Cycle
+
+**Render phase**
+- constructor()
+- render()
+
+
+**Commit phase**
+- react updates the dom & refs in a single batch
+- componentDidMount()
+
