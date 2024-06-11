@@ -423,12 +423,39 @@ It has two phases:
 - `componentDidUpdate()` - called after component is updated.
 
 ### Unmounting cycle
-- `componentWillUnmount()` - called just before the component is unmounted.
+- `componentWillUnmount()` - called just before the component is unmounted. This is useful when you want to clean some data before the component is unmounted.
 
-## Is react lifecycle method still used in modern react? and Is useEffect similar to componentDidMount, and componentDidUpdate()
+
+## Some more nitty gritty details about react lifecycle methods.
 
 1. Do not compare `useEffect` to `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`. They are not similar.
 
 2. `Mounting` and `Updating` both are different parts as Mounting is initially done and updating is done when DOM needs to be updated with new changed data.
 
-3. Modern react does not use render lifecycle.
+3. React lifecycle methods are still used in modern React applications, although the introduction of hooks like useEffect has provided an different approach to managing component lifecycles.
+
+4. `useEffect(callback, [])` with an empty dependency array is similar to componentDidMount. The callback function provided to useEffect will be executed after the initial render, mimicking the behavior of componentDidMount.
+
+5. `useEffect(callback, [dep1, dep2])` with dependencies has similar but more simpler approach compared to `componentDidUpdate`. The callback function will be executed after the initial render and after every subsequent re-render if any of the dependencies change, similar to how `componentDidUpdate` is invoked when props or state change.
+
+6. Modern react is very very clean and shorter approach compared to old class based component approach, and it is easier to manage and understand. It removes tha headache of unncecessary lifecycle methods and makes the code more simpler.
+
+```jsx
+// This is an example using class based component to update when the state changes
+
+componentDidUpdate(prevProps, prevState) {
+  if (this.state.count !== prevState.count1) {
+    // code
+  }
+  if (this.state.count2 !== prevState.count2) {
+    // code
+  }
+  console.log("Component Did Update");
+}
+
+// same example using useEffect
+useEffect(() => {
+  // code
+} [count1, count2])
+
+```

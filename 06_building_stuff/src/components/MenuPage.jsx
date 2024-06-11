@@ -19,7 +19,7 @@ export default function MenuPage() {
     try {
       const data = await fetch(URL);
       const menuInfo = await data.json();
-      setResName(menuInfo?.data?.cards[0].card.card.text);
+      setResName(menuInfo?.data?.cards[0]?.card?.card?.text);
       setRecommendedData(
         menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card?.itemCards
       );

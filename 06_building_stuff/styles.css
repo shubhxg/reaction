@@ -46,11 +46,16 @@ body {
 
 .card-restro {
   user-select: none;
-  cursor: pointer;
   width: 22rem;
   border-radius: 0.5rem;
   padding: 1rem;
   margin: 1rem;
+  transition: scale 0.1s ease, background-color 0.2s linear;
+  &:hover {
+    scale: 1.08;
+    background-color: rgb(77, 77, 77);
+    cursor: pointer;
+  }
 }
 
 h2 {
@@ -135,6 +140,12 @@ button {
 
 .skeleton-card-container {
   margin: 2rem 2rem;
+  transition: scale 0.1s ease, background-color 0.2s linear;
+  &:hover {
+    scale: 1.05;
+    background-color: #1c1c1c;
+    border-radius: 1rem;
+  }
 }
 
 .skeleton-text {
@@ -177,11 +188,6 @@ a:visited {
   color: white;
 }
 
-.card-restro:hover {
-  scale: 1.05;
-  background-color: rgb(40, 40, 40);
-}
-
 button:hover {
   background-color: #b90248;
 }
@@ -213,7 +219,13 @@ button:hover {
   width: 40%;
   border: 1px solid rgb(79, 79, 79);
   border-radius: 0.5rem;
-  height: 20vh; 
+  height: 20vh;
+  transition: scale 0.1s ease, background-color 0.2s linear;
+  &:hover {
+    scale: 1.05;
+    cursor: pointer;
+    background-color: #343434;
+  }
 }
 
 .la {

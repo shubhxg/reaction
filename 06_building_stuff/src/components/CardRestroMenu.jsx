@@ -10,7 +10,6 @@ export default function CardRestroMenu(props) {
     },
     price,
   } = props;
-  console.log(props);
   return (
     <div className="recommendedCard flex-sa la">
       <div>
