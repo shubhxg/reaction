@@ -1,3 +1,26 @@
+# Table of Contents
+
+1. [Returning multiple elements in JSX](#returning-multiple-elements-in-jsx)
+2. [Styling in JSX](#styling-in-jsx)
+3. [Planning and Building Application](#planning-and-building-application)
+4. [Component Reusability](#component-reusability)
+5. [Props](#props)
+6. [Config Driven UI](#config-driven-ui)
+7. [Handling nested complex data](#handling-nested-complex-data)
+8. [Using map to loop over array and render all the components](#using-map-to-loop-over-array-and-render-all-the-components)
+9. [Unique Key for components and why we need them](#unique-key-for-components-and-why-we-need-them)
+10. [Why not use index as key values](#why-not-use-index-as-key-values)
+11. [Exporting and Importing](#exporting-and-importing)
+12. [Making API calls to fetch data](#making-api-calls-to-fetch-data)
+13. [Hooks](#hooks)
+14. [Shimmer UI / Skeleton UI](#shimmer-ui--skeleton-ui)
+15. [Conditional rendering](#conditional-rendering)
+16. [Making the input box work](#making-the-input-box-work)
+17. [Class Based Components](#class-based-components)
+18. [Component Life Cycle](#component-life-cycle)
+19. [Phases of lifecycle of react components](#phases-of-lifecycle-of-react-components)
+20. [Some more nitty gritty details about lifecycle and hooks](#some-more-nitty-gritty-details)
+
 ## Returning multiple elements in JSX
 
 - JSX is stricter than HTML. You have to close tags like `<br />`.
@@ -45,13 +68,13 @@ _For example:_
 
 Each component should be built once and not again and again, meaning DRY principle, this means only one component and then we can reuse those components.
 
-## `Props` 🥠
+## Props
 
 In React, `props` (short for properties) are a way to pass data from a parent component to a child component. They are inputs to the child component and allow components to be reusable with different data.
 
 You can think of props as args given to the function.
 
-### Passing props to a component 👇
+### Passing props to a component
 
 ```jsx
 // this is function receiving the props
@@ -82,7 +105,7 @@ const CardRestro = ({property1, property2}) => {
 
 Props are used when we want to `pass data dynamically to a component`.
 
-## Config Driven UI 🖼️
+## Config Driven UI
 
 It is an approach to building user interfaces where the `structure, layout, and behavior` of the `UI components` are defined in a separate `configuration file`, rather than being hard-coded.
 
@@ -150,7 +173,7 @@ const CardRestro = ({ name, areaName, cuisines, avgRating, slaString }) => {
 
 This above code means map over `resDataList` array and select each `item` and then `render` it's `info` data after `spreading` values and sending as `props`.
 
-## Unique Key for components and why we need them 🔑
+## Unique Key for components and why we need them
 
 Each child component when rendered as a list should have a unique id that represents it. This is to optimize react working and it requires a key to ensure that it is only rendering new component and not rerendering all the components again.
 
@@ -168,7 +191,7 @@ This id is given using `key` can be generated or can be present in the list itse
 
 In this case my list already has a unique key to it, so I am accessing it.
 
-## Why not use index as key values 🔑
+## Why not use index as key values
 
 Try to not use `index` as a `key`, but if you forgot to use a key explicitely then react itself uses `index` as a `key` for `unique id`.
 
@@ -178,7 +201,7 @@ It's a bad practice. So ask your backend developer to send a unique ID for all t
 
 So, `Unique ID` is better than `Index` is better than `no key`.
 
-## Exporting and Importing 📤
+## Exporting and Importing
 
 1. Default: `export default nameOfSomething` at the end of the file, and `import Something from "path"`
 
@@ -192,7 +215,7 @@ So, `Unique ID` is better than `Index` is better than `no key`.
 1. `Website loads` -> `API call` -> `render UI`
 2. `Website loads` -> `render skeleton data` -> `API call` -> `re-render data`
 
-## Hooks 🪝
+## Hooks
 
 JavaScript Utility functions that are created for React library to ease up dom manipulation.
 
@@ -372,23 +395,24 @@ constructor(props) {
     );
   }
 ```
+
 ## Why we need componentDidMount()?
 
 Used to make API calls to fetch data, because it is called after the component is mounted and rendered. This is why react always calls it after the component is rendered and if there are multiple childs being mounted then it is called after all the childs are mounted.
 
-## What is there are multiple child components being present inside parent component?
+## What if there are multiple child components being present inside parent component?
 
 In sequence:
-1. parent `constructor` 
-2. parent `render` 
+
+1. parent `constructor`
+2. parent `render`
 3. child1 `constructor`
-4. child1 `render` 
+4. child1 `render`
 5. child2 `constructor`
 6. child2 `render`
-7. child1 `componentDidMount()` 
+7. child1 `componentDidMount()`
 8. child2 `componentDidMount()`
 9. parent `componentDidMount()`
-
 
 ## Phases of lifecycle of react components
 
@@ -398,35 +422,39 @@ This is because DOM manipulation is slow and long process and react does not wan
 
 ![React lifecycle methods diagram](https://github.com/shubhxg/reaction/assets/69891912/6cd9fcaa-c81b-4641-affa-e5e084268fb8)
 
-
 It has two phases:
+
 1. Render phase
 2. Commit phase
 
 ### Mounting Cycle
 
 **Render phase**
+
 - `constructor()`
 - `render()`
 
-
 **Commit phase**
+
 - react updates the dom & refs in a single batch
 - `componentDidMount()` - called once the component is mounted fully.
 
 ### Update Cycle
+
 **Render phase**
+
 - `render()`
 
 **Commit phase**
+
 - react updates the dom
 - `componentDidUpdate()` - called after component is updated.
 
 ### Unmounting cycle
+
 - `componentWillUnmount()` - called just before the component is unmounted. This is useful when you want to clean some data before the component is unmounted.
 
-
-## Some more nitty gritty details about react lifecycle methods and useEffect Hook 🪝.
+## Some more nitty gritty details
 
 1. Do not compare `useEffect` to `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`. They are not similar.
 
@@ -441,15 +469,12 @@ It has two phases:
 6. Modern react is very very clean and shorter approach compared to old class based component approach, and it is easier to manage and understand. It removes tha headache of unncecessary lifecycle methods and makes the code more simpler.
 
 7. `return () => {}` returning a function inside useEffect for cleanup is similar to `componentWillUnmount`. The function returned from the callback function will be executed when the component is unmounted, similar to how `componentWillUnmount` is invoked when a component is unmounted.
+
 ```jsx
 useEffect(() => {
-
-  return () => {} // unmounting cleaning 
-}, [])
-
+  return () => {}; // unmounting cleaning
+}, []);
 ```
-
-
 
 ```jsx
 // This is an example using class based component to update when the state changes
