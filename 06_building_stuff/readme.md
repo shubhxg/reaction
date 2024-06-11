@@ -426,7 +426,7 @@ It has two phases:
 - `componentWillUnmount()` - called just before the component is unmounted. This is useful when you want to clean some data before the component is unmounted.
 
 
-## Some more nitty gritty details about react lifecycle methods.
+## Some more nitty gritty details about react lifecycle methods and useEffect Hook 🪝.
 
 1. Do not compare `useEffect` to `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`. They are not similar.
 
@@ -439,6 +439,17 @@ It has two phases:
 5. `useEffect(callback, [dep1, dep2])` with dependencies has similar but more simpler approach compared to `componentDidUpdate`. The callback function will be executed after the initial render and after every subsequent re-render if any of the dependencies change, similar to how `componentDidUpdate` is invoked when props or state change.
 
 6. Modern react is very very clean and shorter approach compared to old class based component approach, and it is easier to manage and understand. It removes tha headache of unncecessary lifecycle methods and makes the code more simpler.
+
+7. `return () => {}` returning a function inside useEffect for cleanup is similar to `componentWillUnmount`. The function returned from the callback function will be executed when the component is unmounted, similar to how `componentWillUnmount` is invoked when a component is unmounted.
+```jsx
+useEffect(() => {
+
+  return () => {} // unmounting cleaning 
+}, [])
+
+```
+
+
 
 ```jsx
 // This is an example using class based component to update when the state changes
