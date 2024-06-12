@@ -65,7 +65,7 @@ jquery was in demand before react became the standard way to do the DOM related 
 - `react router-dom`
 - `state management` using redux, recoil, redux-toolkit, contextapi, zustand
 - `class based components` (optional)
-- `Backent as a service (BAAS)` such as appwrite, firebase, supabase,
+- `Backend as a service (BAAS)` such as appwrite, firebase, supabase,
 
 ## What after learning react
 
