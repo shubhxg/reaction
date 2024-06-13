@@ -1,3 +1,19 @@
+## Table of Contents
+
+1. [Introduction to Routing in React](#routing-in-react)
+2. [Installing React Router](#installing)
+3. [Configuration](#configuration)
+4. [Explanation of Configuration Code](#explanation-of-above-code)
+5. [Recommended Router](#which-router-should-we-use)
+6. [Handling Errors](#handling-errors)
+7. [Children Routes](#children-routes)
+8. [Types of Routing](#types-of-routing)
+   - [Server Side](#1-server-side)
+   - [Client Side / SPA](#2-client-side--spa)
+9. [Dynamic Routing](#dynamic-routing)
+10. [Using useParams](#useparams)
+
+
 ## Routing in React
 
 Introducing `client-side routing` in React application, allowing users to navigate between different components (pages) based on the URL, without causing a full page refresh.
