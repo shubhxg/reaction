@@ -17,4 +17,14 @@
 - Microservices architectures promote modularity and scalability.
 - Each microservice can be run on a specific port number.
 
-https://youtu.be/gnS5B90K_YY?si=6mdttU4huZj2PMNB
+## Single Responsibility Principle
+
+The Single Responsibility Principle (SRP) is one of the key principles of object-oriented programming and software design.
+
+It states that a class or module should have only one reason to change, meaning that it should have a single, well-defined responsibility or concern.
+
+The main idea behind the SRP is to promote high cohesion and low coupling in software design. By having each class or module focused on a specific task or responsibility, it becomes easier to understand, maintain, and modify the code.
+
+Single class / module = single responsibility = single reason to change.
+
+This also helps in modularity and testing.

@@ -20,6 +20,7 @@
 18. [Component Life Cycle](#component-life-cycle)
 19. [Phases of lifecycle of react components](#phases-of-lifecycle-of-react-components)
 20. [Some more nitty gritty details about lifecycle and hooks](#some-more-nitty-gritty-details)
+21. [Custom Hooks](#custom-hooks)
 
 ## Returning multiple elements in JSX
 
@@ -495,3 +496,11 @@ useEffect(() => {
 } [count1, count2])
 
 ```
+
+## Custom Hooks
+
+In React, a `custom hook` is a reusable function that allows you to `encapsulate and share stateful logic` across multiple components. `Custom hooks` are a way to extract component logic into reusable functions, making your code more modular, readable, and easier to maintain.
+
+Custom hooks enable you to reuse stateful logic across multiple components, reducing code duplication and promoting DRY (Don't Repeat Yourself) principles. Instead of repeating the same logic in different components, you can extract it into a custom hook and share it wherever needed.
+
+Custom hooks provide a way to manage and encapsulate state logic in a centralized location. This can help you manage state more effectively, especially in complex applications where `state management` can become complex. By using custom hooks, you can keep your state logic in one place, making it easier to debug and maintain.
