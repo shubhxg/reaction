@@ -1,4 +1,5 @@
 import React from "react";
+import useGithubData from "../utils/useGithubData";
 
 export default class UserClass extends React.Component {
   constructor(props) {
@@ -15,17 +16,11 @@ export default class UserClass extends React.Component {
   }
 
   async componentDidMount() {
-    try {
-      const fetchedData = await fetch("https://api.github.com/users/shubhxg");
-      const json = await fetchedData.json();
+      const json = await useGithubData("shubhxg");
       this.setState({ userInfo: json });
-    } catch (err) {
-      console.error(err);
-    }
   }
 
   render() {
-    // const { name, githubUsername: username, email, location } = this.props;
     const { name, location, bio, followers, login, avatar_url } =
       this?.state?.userInfo;
     return (
@@ -64,3 +59,4 @@ export default class UserClass extends React.Component {
     );
   }
 }
+
