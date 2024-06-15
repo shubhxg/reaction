@@ -1,7 +1,7 @@
 import Skeleton from "../components/Skeleton";
 import CardRestroMenu from "../components/CardRestroMenu";
 import { useParams } from "react-router-dom";
-import useRestroMenu from "../utils/useRestroMenu";
+import useRestroMenu from "../utils/hooks/useRestroMenu";
 
 export default function MenuPage() {
   const { resId } = useParams();

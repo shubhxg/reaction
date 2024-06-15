@@ -1,7 +1,7 @@
 import CardRestro from "./CardRestro";
 import Skeleton from "./Skeleton";
-import useRestroData from "../utils/useRestroData";
-import useOnlineStatus from "../utils/useOnlineStatus";
+import useRestroData from "../utils/hooks/useRestroData";
+import useOnlineStatus from "../utils/hooks/useOnlineStatus";
 import { Link } from "react-router-dom";
 import Offline from "./Offline";
 
