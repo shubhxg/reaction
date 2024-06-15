@@ -1,5 +1,5 @@
 import React from "react";
-import useGithubData from "../utils/useGithubData";
+import useGithubData from "../utils/hooks/useGithubData";
 
 export default class UserClass extends React.Component {
   constructor(props) {
