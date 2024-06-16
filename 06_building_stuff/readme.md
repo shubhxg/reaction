@@ -21,6 +21,8 @@
 19. [Phases of lifecycle of react components](#phases-of-lifecycle-of-react-components)
 20. [Some more nitty gritty details about lifecycle and hooks](#some-more-nitty-gritty-details)
 21. [Custom Hooks](#custom-hooks)
+22. [Optimization to build a large scale application](#optimization-to-build-a-large-scale-application)
+23. [Lazy Loading / On Demand loading](#lazy-loading--on-demand-loading)
 
 ## Returning multiple elements in JSX
 
@@ -518,3 +520,21 @@ This means that we can split our code into smaller chunks and then load them on 
 This is a crucial part of building large scale applications and system design for Frontend.
 
 There is one approach which is logical bundling.
+
+## Lazy Loading / On Demand loading
+
+`Lazy loading` is a technique that allows you to load code on demand, instead of loading everything at once. Loads code only when needed. This reduces the initial load time of app, making it faster and more efficient.
+
+`Suspense` is a React component that lets you wait for some code to load and declaratively specify a loading state **(a fallback)** while we’re waiting for it to load. This is useful for lazy loading components, images, or any other kind of asynchronous code that you want to delay rendering until it’s ready.
+
+If we dont use suspense, react throws an error when we use lazy loading. This is because react is trying to render the component before it is even loaded since that component is lazy loaded. So, we use suspense to handle that error. 
+
+
+```jsx
+import { lazy, Suspense } from "react";
+
+const Grocery = lazy(() => import("path"));
+
+// In the routing in App.js, We change route using Suspense Component 
+
+```
