@@ -504,3 +504,17 @@ In React, a `custom hook` is a reusable function that allows you to `encapsulate
 Custom hooks enable you to reuse stateful logic across multiple components, reducing code duplication and promoting DRY (Don't Repeat Yourself) principles. Instead of repeating the same logic in different components, you can extract it into a custom hook and share it wherever needed.
 
 Custom hooks provide a way to manage and encapsulate state logic in a centralized location. This can help you manage state more effectively, especially in complex applications where `state management` can become complex. By using custom hooks, you can keep your state logic in one place, making it easier to debug and maintain.
+
+## Optimization to build a large scale application
+
+Bundlers create bundle of all the code into 1 file with all the dependencies and then it is sent to the browser. This is why it is important to optimize the code since the file will become bigger and bigger in size if all the code is in the 1 single file.
+
+Instead we need smaller bundles of JS files.
+
+This process is known as `Code Splitting` or `Chunking` or `Dynamic Bundling` or `Lazy Loading`. 
+
+This means that we can split our code into smaller chunks and then load them on demand, instead of loading everything at once. This can help us reduce the initial load time of our app, making it faster and more efficient. 
+
+This is a crucial part of building large scale applications and system design for Frontend.
+
+There is one approach which is logical bundling.

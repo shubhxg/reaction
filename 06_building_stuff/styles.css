@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
 h2 {
@@ -11,7 +12,6 @@ h2 {
 body {
   background-color: #212121;
   color: white;
-  font-family: "Lato", sans-serif;
 }
 
 .starSpan {
@@ -115,6 +115,7 @@ input {
 }
 
 button {
+  font-size: 1rem;
   padding: 0.4rem 1rem;
   background-color: #e5065d;
   border: none;
@@ -225,6 +226,13 @@ button:hover {
     scale: 1.05;
     cursor: pointer;
     background-color: #343434;
+  }
+}
+
+.grocery {
+  background-color: green;
+  &:hover {
+    background-color: rgb(0, 97, 0);
   }
 }
 
