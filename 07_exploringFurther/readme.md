@@ -28,3 +28,14 @@ The main idea behind the SRP is to promote high cohesion and low coupling in sof
 Single class / module = single responsibility = single reason to change.
 
 This also helps in modularity and testing.
+
+## CSS Libraries and Frameworks as alternatives to CSS
+
+- Sass
+- Styled Components
+- Less
+- BootStrap (popular)
+- MUI (Prebuilt Components to import)
+- Chakra UI 
+- Taiwind CSS (popular utility based classes)
+- Ant Design
