@@ -8,28 +8,32 @@ export default function Header() {
   const [groceryButtonText, setGroceryButtonText] = useState("Grocery");
 
   return (
-    <header className="header">
-      <div className="navContainer flex-sa">
-        <div className="logocontainer">
+    <header className="sticky top-0 z-10  py-3 px-52 bg-neutral-800 ">
+      <div className="flex justify-between">
+        <div className="logo">
           <Link to="/">
-            <img className="logo" src={LOGO_URL} alt="Logo" />
+            <figure>
+              <img className="rounded-xl w-10" src={LOGO_URL} alt="Logo" />
+            </figure>
           </Link>
         </div>
-        <div className="nav-items">
-          <ul className="flex-center" style={{ gap: "2rem" }}>
+        <div className="flex items-center justify-center">
+          <ul className="flex gap-16 flex items-center">
+            <Link to="/about">
+              <li>About Us</li>
+            </Link>
+            <li>Cart</li>
             <Link to={groceryButtonText === "Grocery" ? "/grocery" : "/"}>
               <button
-                className="grocery"
-                style={{ maxWidth: "7rem" }}
+                className="grocery px-4 py-2 rounded bg-green-500 flex items-center justify-center"
                 onClick={() =>
                   setGroceryButtonText(
                     groceryButtonText === "Grocery" ? "Go Back" : "Grocery"
                   )
                 }
               >
-                {groceryButtonText === "Go Back" && (
+                {groceryButtonText === "Go Back" ? (
                   <svg
-                    style={{ marginRight: "0.2rem" }}
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="14"
@@ -42,18 +46,17 @@ export default function Header() {
                       d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
                     />
                   </svg>
+                ) : (
+                  <img
+                    className="w-6 mr-2"
+                    src="https://www.svgrepo.com/show/3868/groceries.svg"
+                  ></img>
                 )}
                 {groceryButtonText}
               </button>
             </Link>
-            <Link to="/contactus">
-              <li style={{ maxWidth: "7rem" }}>Contact Us</li>
-            </Link>
-            <Link to="/about">
-              <li style={{ maxWidth: "7rem" }}>About Us</li>
-            </Link>
-            <li>Cart</li>
             <button
+              className="py-2 px-6 bg-rose-600 hover:bg-rose-800 rounded"
               onClick={() => {
                 loginButton === "Login"
                   ? setLoginButton("Logout")

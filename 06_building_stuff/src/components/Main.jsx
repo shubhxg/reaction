@@ -23,17 +23,16 @@ export default function Main() {
   }
 
   return !restaurantData.length ? (
-    <section className="hero">
-      <div className="cards-container flex-center">
-        <Skeleton />
-      </div>
-    </section>
+    <main className="hero mt-12 mx-48 h-full">
+      <Skeleton />
+    </main>
   ) : (
-    <section className="hero">
-      <div className="button-container flex-sa">
-        <div>
+    <main className="hero mt-12 mx-48 h-full">
+      <div className="flex justify-between px-8 items-center">
+        <div className="flex items-center">
           <input
-            placeholder="Enter food name"
+            className="bg-neutral-700 border-transparent py-2 px-4 mr-4 rounded"
+            placeholder="Enter Food Name"
             type="text"
             onChange={(e) => {
               setSearchTerm(e.target.value);
@@ -41,6 +40,7 @@ export default function Main() {
             value={searchTerm}
           />
           <button
+            className="py-2 px-6 bg-rose-600 hover:bg-rose-800 rounded flex items-center"
             onClick={() => {
               if (searchTerm) {
                 setFilteredList(
@@ -59,11 +59,21 @@ export default function Main() {
               }
             }}
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-search mr-2"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
             Search
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="py-2 flex items-center w-75 px-6 bg-rose-600 hover:bg-rose-800 rounded"
           onClick={() => {
             setFilteredList(
               restaurantData.filter((item) => item.info.avgRating >= 4.5)
@@ -72,26 +82,28 @@ export default function Main() {
           }}
         >
           <svg
-            className="bi bi-funnel-fill filter-svg"
+            className="bi bi-funnel-fill filter-svg mr-2"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
-            viewBox="0 0 16 10"
+            viewBox="0 0 16 14"
           >
             <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z" />
           </svg>
           Filter by Top Rated Restaurants
         </button>
       </div>
-      <h2>{h2}</h2>
-      <div className="cards-container flex-center">
+      <div className="heading-container mt-8 px-8">
+        <h2 className="text-3xl font-semibold">{h2}</h2>
+      </div>
+      <div id="cards-container" className="grid grid-cols-3 gap-4">
         {filteredList.map((item) => (
           <Link to={"/res/" + item.info.id} key={item.info.id}>
             <CardRestro {...item?.info} />
           </Link>
         ))}
       </div>
-    </section>
+    </main>
   );
 }
