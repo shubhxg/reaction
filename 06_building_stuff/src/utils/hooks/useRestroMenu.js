@@ -17,16 +17,16 @@ export default function useRestroMenu(resId) {
       setRestroData(menuInfo);
     } catch (err) {
       console.error(err);
-      setError(err);
     }
   };
 
   const setRestroData = (menuInfo) => {
-    setResName(menuInfo?.data?.cards[0]?.card?.card?.text);
+    setResName(menuInfo?.data?.cards[2]?.card?.card?.info.name);
     setResInfo(
-      menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]
-        ?.card?.card?.itemCards
+      menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]
+        ?.card?.card?.categories[0]?.itemCards[0]?.card?.info
     );
+    
   };
 
   return [resInfo, resName];

@@ -1,19 +1,6 @@
 export default function Offline() {
   return (
-    <div
-      className="offline-page-container"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "1rem",
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-      }}
-    >
+    <div className="offline-page-container flex flex-col items-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <h1>Oops! Looks like you are offline!</h1>
       <p>Check your Internet connection and try again.</p>
       <img

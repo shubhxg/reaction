@@ -25,13 +25,8 @@ export default class UserClass extends React.Component {
       this?.state?.userInfo;
     return (
       <div
-        className="user-card"
+        className="user-card flex gap-4 mt-2 p-4 w-1/3"
         style={{
-          display: "flex",
-          gap: "1rem",
-          marginTop: "1rem",
-          padding: "1rem",
-          width: "30%",
           border: "1px solid white",
         }}
       >

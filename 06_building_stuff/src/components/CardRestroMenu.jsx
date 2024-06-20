@@ -18,7 +18,7 @@ export default function CardRestroMenu(props) {
         <h5>{price ? `₹${price / 100}` : ""}</h5>
         <span>⭐ {rating}</span>
       </div>
-      <img src={MENU_IMG_URL + imageId} alt="cuisine image" style={{ borderRadius: "0.5rem"}}/>
+      <img className="rounded-md" src={MENU_IMG_URL + imageId} alt="cuisine image"/>
     </div>
   );
 }

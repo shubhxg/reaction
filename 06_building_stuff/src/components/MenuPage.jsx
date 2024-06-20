@@ -8,17 +8,15 @@ export default function MenuPage() {
   const [resInfo, resName] = useRestroMenu(resId);
 
   return !resInfo.length ? (
-    <section className="hero">
-      <div className="cards-container flex-center">
+      <main className="hero mt-12 mx-48 h-full">
         <Skeleton />
-      </div>
-    </section>
+      </main>
   ) : (
     <div className="menuContainer">
-      <h1 style={{ margin: "1rem" }}>{resName}</h1>
-      <h3 style={{ margin: "0.2rem" }}>Top Picks</h3>
+      <h1 className="m-2">{resName}</h1>
+      <h3 className="m-1">Top Picks</h3>
       {resInfo.map((item) => (
-        <CardRestroMenu {...item?.card?.info} key={item.card.info.id} />
+        <CardRestroMenu {...item?.info} key={item.card.info.id} />
       ))}
     </div>
   );
