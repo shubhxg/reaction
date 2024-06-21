@@ -538,3 +538,8 @@ const Grocery = lazy(() => import("path"));
 // In the routing in App.js, We change route using Suspense Component 
 
 ```
+
+## Higher Order Component
+
+A Component that takes another component as an argument and returns a new component. It acts like an ehnancer for the component.
+

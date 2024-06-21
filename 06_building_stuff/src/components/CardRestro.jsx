@@ -1,4 +1,4 @@
-import { CDN_URL } from "../utils/constants";
+import { CDN_URL } from "../utils/data/constants";
 
 export default function CardRestro({
   name,

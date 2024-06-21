@@ -1,4 +1,4 @@
-import { LOGO_URL } from "../utils/constants";
+import { LOGO_URL } from "../utils/data/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -18,7 +18,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center justify-center">
-          <ul className="flex gap-16 flex items-center">
+          <ul className="flex gap-16 items-center">
             <Link to="/about">
               <li>About Us</li>
             </Link>

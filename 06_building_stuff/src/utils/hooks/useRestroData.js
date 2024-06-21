@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { restaurantDataAPIURL } from "../constants";
+import resDataList from "../data/resDataList";
 
 export default function useRestroData() {
   const [restaurantData, setRestaurantData] = useState([]);
@@ -8,22 +8,12 @@ export default function useRestroData() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetchDataSetData(restaurantDataAPIURL);
+    setData(resDataList);
   }, []);
 
-  async function fetchDataSetData(dataAPI) {
-    try {
-      const response = await fetch(dataAPI);
-      const dataJSON = await response.json();
-      const restData =
-        dataJSON?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
-
-      setRestaurantData(sliceData(restData));
-      setFilteredList(sliceData(restData));
-    } catch (err) {
-      console.log(err);
-    }
+  function setData(resDataList) {
+    setRestaurantData(sliceData(resDataList));
+    setFilteredList(sliceData(resDataList));
   }
 
   const sliceData = (restData) => {

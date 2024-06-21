@@ -1,4 +1,4 @@
-import { MENU_URL } from "../constants";
+import { MENU_URL } from "../data/constants";
 import { useEffect, useState } from "react";
 
 export default function useRestroMenu(resId) {

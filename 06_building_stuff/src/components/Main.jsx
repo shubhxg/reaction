@@ -2,6 +2,8 @@ import CardRestro from "./CardRestro";
 import Skeleton from "./Skeleton";
 import useRestroData from "../utils/hooks/useRestroData";
 import useOnlineStatus from "../utils/hooks/useOnlineStatus";
+import useCuisinesData from "../utils/hooks/useCuisinesData"
+import CardCuisines from "../components/CardCuisines";
 import { Link } from "react-router-dom";
 import Offline from "./Offline";
 
@@ -17,6 +19,7 @@ export default function Main() {
   ] = useRestroData();
 
   const onlineStatus = useOnlineStatus();
+  const cuisines = useCuisinesData();
 
   if (!onlineStatus) {
     return <Offline />;
@@ -28,6 +31,14 @@ export default function Main() {
     </main>
   ) : (
     <main className="hero mt-12 mx-48 h-full">
+      <h1 className="font-bold text-2xl mb-4">What's on your mind?</h1>
+      <div className="w-full px-8 pt-4 rounded-xl">
+        <div className="cuisines-container flex flex-wrap gap-2 mb-12">
+          {cuisines.map((item) => (
+            <CardCuisines {...item} key={item.id} />
+          ))}
+        </div>
+      </div>
       <div className="flex justify-between px-8 items-center">
         <div className="flex items-center">
           <input

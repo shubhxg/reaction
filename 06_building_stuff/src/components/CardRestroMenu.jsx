@@ -1,4 +1,4 @@
-import { MENU_IMG_URL } from "../utils/constants";
+import { MENU_IMG_URL } from "../utils/data/constants";
 
 export default function CardRestroMenu(props) {
   const {
