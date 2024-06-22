@@ -1,23 +1,27 @@
 import { LOGO_URL } from "../utils/data/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 export default function Header() {
   const [loginButton, setLoginButton] = useState("Login");
   const [groceryButtonText, setGroceryButtonText] = useState("Grocery");
 
   return (
-    <header className="sticky top-0 z-10  py-3 px-52 bg-neutral-800 ">
+    <header className="sticky top-0 z-10 py-3 px-52 bg-white text-gray-800 shadow">
       <div className="flex justify-between">
-        <div className="logo">
+        <div className="logo flex items-center">
           <Link to="/">
             <figure>
               <img className="rounded-xl w-10" src={LOGO_URL} alt="Logo" />
             </figure>
           </Link>
+          <Link to="/">
+            <span className="mx-4 cursor-pointer text-lg font-bold text-rose-600">
+              FoodHub🍴
+            </span>
+          </Link>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center text-gray-800 font-bold">
           <ul className="flex gap-16 items-center">
             <Link to="/about">
               <li>About Us</li>
@@ -25,7 +29,7 @@ export default function Header() {
             <li>Cart</li>
             <Link to={groceryButtonText === "Grocery" ? "/grocery" : "/"}>
               <button
-                className="grocery px-4 py-2 rounded bg-green-500 flex items-center justify-center"
+                className="grocery px-4 py-2 rounded hover:bg-green-500 flex items-center justify-center"
                 onClick={() =>
                   setGroceryButtonText(
                     groceryButtonText === "Grocery" ? "Go Back" : "Grocery"
@@ -56,7 +60,7 @@ export default function Header() {
               </button>
             </Link>
             <button
-              className="py-2 px-6 bg-rose-600 hover:bg-rose-800 rounded"
+              className="py-2 px-6 bg-rose-600 text-white rounded"
               onClick={() => {
                 loginButton === "Login"
                   ? setLoginButton("Logout")

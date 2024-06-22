@@ -6,5 +6,8 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

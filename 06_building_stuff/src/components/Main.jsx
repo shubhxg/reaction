@@ -30,19 +30,25 @@ export default function Main() {
       <Skeleton />
     </main>
   ) : (
-    <main className="hero mt-12 mx-48 h-full">
-      <h1 className="font-bold text-2xl mb-4">What's on your mind?</h1>
-      <div className="w-full px-8 pt-4 rounded-xl">
-        <div className="cuisines-container flex flex-wrap gap-2 mb-12">
+    <main className="hero mt-4 mx-48 h-full">
+      <h1 className="font-black ml-8 text-2xl text-gray-800">
+        What's on your mind?
+      </h1>
+      <div className="w-full px-8 pt-4 rounded-xl -m-2">
+        <div className="cuisines-container flex flex-wrap gap-14 mb-12">
           {cuisines.map((item) => (
             <CardCuisines {...item} key={item.id} />
           ))}
         </div>
       </div>
-      <div className="flex justify-between px-8 items-center">
+      <hr className="my-8" />
+      <div className="heading-container mt-8 px-8">
+        <h2 className="font-black text-2xl text-gray-800">{h2}</h2>
+      </div>
+      <div className="flex justify-between px-8 my-4 items-center">
         <div className="flex items-center">
           <input
-            className="bg-neutral-700 border-transparent py-2 px-4 mr-4 rounded"
+            className="bg-gray-200 border-transparent py-2 px-4 mr-4 rounded"
             placeholder="Enter Food Name"
             type="text"
             onChange={(e) => {
@@ -104,9 +110,6 @@ export default function Main() {
           </svg>
           Filter by Top Rated Restaurants
         </button>
-      </div>
-      <div className="heading-container mt-8 px-8">
-        <h2 className="text-3xl font-semibold">{h2}</h2>
       </div>
       <div id="cards-container" className="grid grid-cols-3 gap-4">
         {filteredList.map((item) => (
