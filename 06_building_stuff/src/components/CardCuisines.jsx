@@ -4,7 +4,7 @@ export default function CardCuisines(props) {
   const { imageId } = props;
 
   return (
-    <div className="w-32 -mb-8">
+    <div className="w-32 -mb-8 cursor-pointer">
       <img
         src={CUISINES_IMG_URL + imageId}
         alt="cuisine picture"

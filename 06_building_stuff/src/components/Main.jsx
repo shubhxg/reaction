@@ -30,14 +30,16 @@ export default function Main() {
       <Skeleton />
     </main>
   ) : (
-    <main className="hero mt-4 mx-48 h-full">
-      <h1 className="font-black ml-8 text-2xl text-gray-800">
+    <main className="hero mt-4 mx-40 h-full">
+      <h1 className="font-black ml-8 text-2xl text-gray-800 mb-4">
         What's on your mind?
       </h1>
-      <div className="w-full px-8 pt-4 rounded-xl -m-2">
-        <div className="cuisines-container flex flex-wrap gap-14 mb-12">
+      <div className="px-8 p-2 -m-2 overflow-x-auto">
+        <div className="cuisines-container flex flex-nowrap gap-6 mb-12 pb-4">
           {cuisines.map((item) => (
-            <CardCuisines {...item} key={item.id} />
+            <div key={item.id} className="flex-none">
+              <CardCuisines {...item} />
+            </div>
           ))}
         </div>
       </div>
@@ -48,7 +50,7 @@ export default function Main() {
       <div className="flex justify-between px-8 my-4 items-center">
         <div className="flex items-center">
           <input
-            className="bg-gray-200 border-transparent py-2 px-4 mr-4 rounded"
+            className="bg-gray-200 w-64 border-transparent py-2 px-4 mr-4 focus:w-80 transition-all duration-200 ease-in-out rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800"
             placeholder="Enter Food Name"
             type="text"
             onChange={(e) => {
@@ -57,7 +59,7 @@ export default function Main() {
             value={searchTerm}
           />
           <button
-            className="py-2 px-6 bg-rose-600 hover:bg-rose-800 rounded flex items-center"
+            className="py-2 px-6 bg-rose-600 hover:bg-rose-800 rounded-md flex items-center"
             onClick={() => {
               if (searchTerm) {
                 setFilteredList(
