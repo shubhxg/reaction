@@ -2,6 +2,7 @@ export default resDataList = [
   {
     info: {
       id: "84717",
+      promoted: true,
       name: "Pizza Hut",
       cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
       locality: "Phoenix United Mall",
@@ -188,6 +189,7 @@ export default resDataList = [
     info: {
       id: "555827",
       name: "Ajanta",
+      promoted: true,
       cloudinaryImageId: "qealf4nbzfv0ilgmurgs",
       locality: "Rampur Garden",
       areaName: "Shyamganj",
@@ -269,6 +271,7 @@ export default resDataList = [
     info: {
       id: "291882",
       name: "Bajrang Dhaba Family Dhaba Restaurant",
+      promoted: true,
       cloudinaryImageId: "vh3b0ylzi7be9gcdgh2g",
       locality: "Sanjay Nagar",
       areaName: "Nawada Pilibhit Bypass Road",
@@ -339,6 +342,83 @@ export default resDataList = [
       link: "https://www.swiggy.com/restaurants/bajrang-dhaba-family-dhaba-restaurant-sanjay-nagar-nawada-pilibhit-bypass-road-bareilly-291882",
       type: "WEBLINK",
     },
+  },
+  {
+    info: {
+      id: "890441",
+      name: "London Pizzeria",
+      isNew: true,
+      cloudinaryImageId:
+        "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/4/4c086e8c-c891-4a1d-8c55-3bca2b9f5f69_890441.jpg",
+      locality: "Bareilly",
+      areaName: "Civil Lines",
+      costForTwo: "₹300 for two",
+      cuisines: [
+        "CONTINENTAL",
+        "PIZZA",
+        "CHINESE",
+        "ASIAN",
+        "PAN-ASIAN",
+        "BARBECUE",
+        "DESSERTS",
+        "BEVERAGES",
+      ],
+      parentId: "520476",
+      avgRatingString: "NEW",
+      sla: {
+        deliveryTime: 35,
+        lastMileTravel: 2,
+        serviceability: "SERVICEABLE",
+        slaString: "30-35 mins",
+        lastMileTravelString: "2.6 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-06-22 02:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "60% OFF",
+        subHeader: "UPTO ₹120",
+      },
+      orderabilityCommunication: {
+        title: {},
+        subTitle: {},
+        message: {},
+        customIcon: {},
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      isNewlyOnboarded: true,
+      restaurantOfferPresentationInfo: {},
+    },
+    analytics: {
+      context: "seo-data-efc62628-1aed-4913-ab6f-ef8390c1ebe3",
+    },
+    cta: {
+      link: "https://www.swiggy.com/restaurants/london-pizzeria-civil-lines-bareilly-890441",
+      text: "RESTAURANT_MENU",
+      type: "WEBLINK",
+    },
+    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
     info: {
@@ -490,6 +570,7 @@ export default resDataList = [
     info: {
       id: "127181",
       name: "Bite [ Prem  Nagar ]",
+      promoted: true,
       cloudinaryImageId: "ygnglrfpfeyjdmrdy2cp",
       locality: "Janakpuri",
       areaName: "Prem Nagar",
@@ -632,6 +713,7 @@ export default resDataList = [
     info: {
       id: "609490",
       name: "Ajanta Sweets & Bakes",
+      promoted: true,
       cloudinaryImageId: "w6gwsp9ceb1kjtuhsyqp",
       locality: "Anand Ashram Rd",
       areaName: "Rampur Garden Civil Lines",
@@ -776,6 +858,7 @@ export default resDataList = [
     info: {
       id: "588067",
       name: "Deepak Sweets",
+      promoted: true,
       cloudinaryImageId: "vkladxzxx0wj54jt3j5k",
       locality: "Pilibhit Road",
       areaName: "DD Puram",
@@ -1110,6 +1193,7 @@ export default resDataList = [
     info: {
       id: "890413",
       name: "Delhi Dabba",
+      promoted: true,
       cloudinaryImageId:
         "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/4/707f6743-7929-42d8-b720-782ce38312cd_890413.jpg",
       locality: "Bhatnagar Colony",
@@ -1437,6 +1521,7 @@ export default resDataList = [
     info: {
       id: "895725",
       name: "Best In Town",
+      isNew: true,
       cloudinaryImageId:
         "RX_THUMBNAIL/IMAGES/VENDOR/2024/5/26/ede43ade-fc47-43b0-a780-cf8d160980da_895725.jpg",
       locality: "Civil Lines",
@@ -1782,6 +1867,7 @@ export default resDataList = [
     info: {
       id: "883771",
       name: "Quick Bite",
+      promoted: true,
       cloudinaryImageId:
         "RX_THUMBNAIL/IMAGES/VENDOR/2024/5/13/69886dda-6d8d-4fd6-8fe9-6ec432fd2da2_883771.jpg",
       locality: "Chhoti Vihar",
@@ -1859,82 +1945,6 @@ export default resDataList = [
     },
     cta: {
       link: "https://www.swiggy.com/restaurants/quick-bite-chhoti-vihar-phoenix-mall-bareilly-883771",
-      text: "RESTAURANT_MENU",
-      type: "WEBLINK",
-    },
-    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
-  },
-  {
-    info: {
-      id: "890441",
-      name: "London Pizzeria",
-      cloudinaryImageId:
-        "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/4/4c086e8c-c891-4a1d-8c55-3bca2b9f5f69_890441.jpg",
-      locality: "Bareilly",
-      areaName: "Civil Lines",
-      costForTwo: "₹300 for two",
-      cuisines: [
-        "CONTINENTAL",
-        "PIZZA",
-        "CHINESE",
-        "ASIAN",
-        "PAN-ASIAN",
-        "BARBECUE",
-        "DESSERTS",
-        "BEVERAGES",
-      ],
-      parentId: "520476",
-      avgRatingString: "NEW",
-      sla: {
-        deliveryTime: 35,
-        lastMileTravel: 2,
-        serviceability: "SERVICEABLE",
-        slaString: "30-35 mins",
-        lastMileTravelString: "2.6 km",
-        iconType: "ICON_TYPE_EMPTY",
-      },
-      availability: {
-        nextCloseTime: "2024-06-22 02:00:00",
-        opened: true,
-      },
-      badges: {},
-      isOpen: true,
-      type: "F",
-      badgesV2: {
-        entityBadges: {
-          imageBased: {},
-          textBased: {},
-          textExtendedBadges: {},
-        },
-      },
-      aggregatedDiscountInfoV3: {
-        header: "60% OFF",
-        subHeader: "UPTO ₹120",
-      },
-      orderabilityCommunication: {
-        title: {},
-        subTitle: {},
-        message: {},
-        customIcon: {},
-      },
-      differentiatedUi: {
-        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-        differentiatedUiMediaDetails: {
-          mediaType: "ADS_MEDIA_ENUM_IMAGE",
-          lottie: {},
-          video: {},
-        },
-      },
-      reviewsSummary: {},
-      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-      isNewlyOnboarded: true,
-      restaurantOfferPresentationInfo: {},
-    },
-    analytics: {
-      context: "seo-data-efc62628-1aed-4913-ab6f-ef8390c1ebe3",
-    },
-    cta: {
-      link: "https://www.swiggy.com/restaurants/london-pizzeria-civil-lines-bareilly-890441",
       text: "RESTAURANT_MENU",
       type: "WEBLINK",
     },
@@ -2181,6 +2191,7 @@ export default resDataList = [
       id: "854204",
       name: "Angeethi",
       cloudinaryImageId: "fb3be3440f81b88157f50c9485e8c127",
+      isNew: true,
       locality: "Civil Lines",
       areaName: "Civil Lines",
       costForTwo: "₹300 for two",
@@ -2400,6 +2411,7 @@ export default resDataList = [
     info: {
       id: "908937",
       name: "Spice Factory",
+      isNew: true,
       cloudinaryImageId:
         "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/13/4a465192-5450-411a-8143-502f40525ebb_908937.jpg",
       locality: "DD Puram",
@@ -2469,6 +2481,7 @@ export default resDataList = [
     info: {
       id: "839311",
       name: "Dark House Pizza",
+      isNew: true,
       cloudinaryImageId: "6b8ced7d3c6ccdb2c0aeef0a0138ec8a",
       locality: "Mini Bypass",
       areaName: "Mini Bypass",

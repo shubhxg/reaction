@@ -513,9 +513,9 @@ Bundlers create bundle of all the code into 1 file with all the dependencies and
 
 Instead we need smaller bundles of JS files.
 
-This process is known as `Code Splitting` or `Chunking` or `Dynamic Bundling` or `Lazy Loading`. 
+This process is known as `Code Splitting` or `Chunking` or `Dynamic Bundling` or `Lazy Loading`.
 
-This means that we can split our code into smaller chunks and then load them on demand, instead of loading everything at once. This can help us reduce the initial load time of our app, making it faster and more efficient. 
+This means that we can split our code into smaller chunks and then load them on demand, instead of loading everything at once. This can help us reduce the initial load time of our app, making it faster and more efficient.
 
 This is a crucial part of building large scale applications and system design for Frontend.
 
@@ -527,19 +527,40 @@ There is one approach which is logical bundling.
 
 `Suspense` is a React component that lets you wait for some code to load and declaratively specify a loading state **(a fallback)** while we’re waiting for it to load. This is useful for lazy loading components, images, or any other kind of asynchronous code that you want to delay rendering until it’s ready.
 
-If we dont use suspense, react throws an error when we use lazy loading. This is because react is trying to render the component before it is even loaded since that component is lazy loaded. So, we use suspense to handle that error. 
-
+If we dont use suspense, react throws an error when we use lazy loading. This is because react is trying to render the component before it is even loaded since that component is lazy loaded. So, we use suspense to handle that error.
 
 ```jsx
 import { lazy, Suspense } from "react";
 
 const Grocery = lazy(() => import("path"));
 
-// In the routing in App.js, We change route using Suspense Component 
-
+// In the routing in App.js, We change route using Suspense Component
 ```
 
-## Higher Order Component
+## Higher Order Component (hoc)
 
 A Component that takes another component as an argument and returns a new component. It acts like an ehnancer for the component.
 
+Basically a function that takes a component as an argument and returns the same component with some enhanced feature on top of it. This way we dont have to repeat the same code for improved components.
+
+A pure function is a function that always returns the same output for the same input. This is why we use pure functions in react.
+
+```jsx
+// creation of hoc
+
+// hoc is a pure function 
+export function withPromotedLabel(CardRestro) {
+  return (props) => {
+    return (
+      <div>
+        <label>Promoted</label>
+        <CardRestro {...props} />
+      </div>
+    );
+  };
+}
+
+// usage of hoc
+const RestaurantCardPromoted = withPromotedLabel(CardRestro);
+<RestaurantCardPromoted {...item?.info} />;
+```

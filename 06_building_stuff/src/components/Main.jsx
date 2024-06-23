@@ -1,8 +1,8 @@
-import CardRestro from "./CardRestro";
+import { CardRestro, withNewLabel, withPromotedLabel } from "./CardRestro";
 import Skeleton from "./Skeleton";
 import useRestroData from "../utils/hooks/useRestroData";
 import useOnlineStatus from "../utils/hooks/useOnlineStatus";
-import useCuisinesData from "../utils/hooks/useCuisinesData"
+import useCuisinesData from "../utils/hooks/useCuisinesData";
 import CardCuisines from "../components/CardCuisines";
 import { Link } from "react-router-dom";
 import Offline from "./Offline";
@@ -20,6 +20,8 @@ export default function Main() {
 
   const onlineStatus = useOnlineStatus();
   const cuisines = useCuisinesData();
+  const RestaurantCardPromoted = withPromotedLabel(CardRestro);
+  const RestaurantCardNew = withNewLabel(CardRestro);
 
   if (!onlineStatus) {
     return <Offline />;
@@ -113,10 +115,19 @@ export default function Main() {
           Filter by Top Rated Restaurants
         </button>
       </div>
-      <div id="cards-container" className="grid grid-cols-3 gap-4">
+      <div
+        id="cards-container"
+        className="grid grid-cols-3 gap-4 text-gray-800"
+      >
         {filteredList.map((item) => (
           <Link to={"/res/" + item.info.id} key={item.info.id}>
-            <CardRestro {...item?.info} />
+            {item?.info?.promoted === true ? (
+              <RestaurantCardPromoted {...item?.info} />
+            ) : item?.info?.isNew === true ? (
+              <RestaurantCardNew {...item?.info} />
+            ) : (
+              <CardRestro {...item?.info} />
+            )}
           </Link>
         ))}
       </div>
