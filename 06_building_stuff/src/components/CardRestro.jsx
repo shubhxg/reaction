@@ -1,6 +1,6 @@
 import { CDN_URL } from "../utils/data/constants";
 
-export default function CardRestro({
+export function CardRestro({
   name,
   areaName,
   cuisines,
@@ -38,8 +38,8 @@ export default function CardRestro({
                 y2="19"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#21973B"></stop>
-                <stop offset="1" stop-color="#128540"></stop>
+                <stop stopColor="#21973B"></stop>
+                <stop offset="1" stopColor="#128540"></stop>
               </linearGradient>
             </defs>
           </svg>{" "}
@@ -55,4 +55,32 @@ export default function CardRestro({
       </div>
     </div>
   );
+}
+
+// hoc
+export function withPromotedLabel(CardRestro) {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute z-10 mx-2 my-6 text-white bg-gradient-to-r from-orange-500 to-rose-600 rounded px-4 py-1">
+          Must Try
+        </label>
+        <CardRestro {...props} />
+      </div>
+    );
+  };
+}
+
+// hoc
+export function withNewLabel(CardRestro) {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute z-10 mx-2 my-6 text-white bg-gradient-to-r from-green-500 to-green-600 rounded px-4 py-1">
+          New !
+        </label>
+        <CardRestro {...props} />
+      </div>
+    );
+  };
 }

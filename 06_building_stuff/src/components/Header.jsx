@@ -7,7 +7,7 @@ export default function Header() {
   const [groceryButtonText, setGroceryButtonText] = useState("Grocery");
 
   return (
-    <header className="sticky top-0 z-10 py-3 px-52 bg-white shadow text-gray-800">
+    <header className="sticky top-0 z-20 py-3 px-52 bg-white shadow text-gray-800">
       <div className="flex justify-between">
         <div>
           <a href="/" className="logo flex items-center">
