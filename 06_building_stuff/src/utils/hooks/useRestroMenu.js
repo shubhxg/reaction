@@ -7,7 +7,7 @@ export default function useRestroMenu(resId) {
   const URL = MENU_URL + resId;
 
   useEffect(() => {
-    fetchMenuData();
+    fetchMenuData(URL);
   }, [resId]);
 
   const fetchMenuData = async () => {
@@ -23,10 +23,9 @@ export default function useRestroMenu(resId) {
   const setRestroData = (menuInfo) => {
     setResName(menuInfo?.data?.cards[2]?.card?.card?.info.name);
     setResInfo(
-      menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]
-        ?.card?.card?.categories[0]?.itemCards[0]?.card?.info
+      menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]
+        ?.card?.card?.itemCards
     );
-    
   };
 
   return [resInfo, resName];
