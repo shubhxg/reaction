@@ -17,7 +17,7 @@ export function CardRestro({
       />
       <h3 className="font-bold my-1 text-xl text-gray-700">{name}</h3>
       <div className="starSpan my-1">
-        <span>
+        <span className="text-green-700 font-semibold">
           <svg className="inline-block" viewBox="0 0 24 24" width="24">
             <circle
               cx="10"
