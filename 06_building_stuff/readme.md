@@ -564,3 +564,8 @@ export function withPromotedLabel(CardRestro) {
 const RestaurantCardPromoted = withPromotedLabel(CardRestro);
 <RestaurantCardPromoted {...item?.info} />;
 ```
+
+## Layers of any UI Library
+
+1. UI layer -> static and powered by data layer (jsx)
+2. Data layer -> dynamic nature (states, props, local vars, etc)
