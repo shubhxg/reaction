@@ -7,7 +7,7 @@ export default function Header() {
   const [groceryButtonText, setGroceryButtonText] = useState("Grocery");
 
   return (
-    <header className="sticky top-0 z-20 py-3 px-52 bg-white shadow text-gray-800">
+    <header className="sticky top-0 z-20 py-3 px-52 bg-white shadow-[0_35px_60px_-30px_rgba(0,0,0,0.3)] text-gray-800">
       <div className="flex justify-between">
         <div>
           <a href="/" className="logo flex items-center">
@@ -15,7 +15,7 @@ export default function Header() {
               <img className="rounded-xl w-10" src={LOGO_URL} alt="Logo" />
             </figure>
             <span className="mx-4 cursor-pointer text-lg font-bold text-rose-600">
-            {groceryButtonText === "Grocery" ? "FoodHub 🍴": "GroceryHub 🥕"  }
+              {groceryButtonText === "Grocery" ? "FoodHub 🍴" : "GroceryHub 🥕"}
             </span>
           </a>
         </div>

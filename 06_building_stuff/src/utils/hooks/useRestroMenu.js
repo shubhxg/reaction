@@ -22,9 +22,12 @@ export default function useRestroMenu(resId) {
 
   const setRestroData = (menuInfo) => {
     setResName(menuInfo?.data?.cards[2]?.card?.card?.info.name);
+    // Finding the first card within the `cards` array using find method that 
+    // has an itemCards property and then only access the rest of its cards
     setResInfo(
-      menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]
-        ?.card?.card?.itemCards
+      menuInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.find(
+        (card) => card?.card?.card?.itemCards
+      )?.card?.card?.itemCards
     );
   };
 
