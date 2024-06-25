@@ -39,7 +39,7 @@ export default function CardRestroMenu(props) {
               xmlns="http://www.w3.org/2000/svg"
               className="mr-1"
               role="img"
-              fillColor="#1BA672"
+              fillcolor="#1BA672"
             >
               <rect width="14" height="14" fill="white"></rect>
               <path
@@ -51,7 +51,7 @@ export default function CardRestroMenu(props) {
           </span>
           <br />
           <h6 className="text-md w-4/5 text-gray-600">
-            {description.length > 100 ? (
+            {description?.length > 100 ? (
               <>
                 {description.slice(0, 100)}...
                 <span
@@ -68,11 +68,18 @@ export default function CardRestroMenu(props) {
             )}
           </h6>
         </div>
-        <img
-          className="rounded-xl w-36 h-36 bg-cover"
-          src={MENU_IMG_URL + imageId}
-          alt="cuisine image"
-        />
+        {imageId ? (
+          <img
+            className="rounded-xl w-36 h-36 object-cover"
+            src={MENU_IMG_URL + imageId}
+            alt="cuisine image"
+          />
+        ) : (
+          <img
+            className="rounded-xl w-36 h-36 object-cover"
+            src="https://images.indianexpress.com/2023/12/food.jpg"
+          />
+        )}
       </div>
       <hr className="my-8" />
     </div>
