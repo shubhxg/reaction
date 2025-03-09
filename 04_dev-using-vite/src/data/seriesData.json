@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "seriesName": "Silicon Valley",
+    "seriesRating": 8.1,
+    "imgSource": "https://resizing.flixster.com/hie1XJFujwt4bVxKxqQMmpetHXQ=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10475137_i_h9_aa.jpg"
+  },
+  {
+    "id": 2,
+    "seriesName": "Big Bang Theory",
+    "seriesRating": 9.3,
+    "imgSource": "https://m.media-amazon.com/images/I/81r8i2knyVL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "id": 3,
+    "seriesName": "Friends",
+    "seriesRating": 9,
+    "imgSource": "https://uniathenaprods3.uniathena.com/s3fs-public/insights-article/seriesreview-e2-80-9cfriends-e2-80-9d_0.jpg"
+  }
+]
