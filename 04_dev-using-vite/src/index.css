@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -5,13 +9,15 @@
 }
 
 body {
+  font-family: 'Franklin Gothic Medium', 'Arial';
+  font-weight: 400;
   background-color: black;
   display: flex;
   justify-content: center;
   color: white;
 }
 
-.card {
+.card-container {
   width: 100vw;
   height: 100vh;
   display: flex;

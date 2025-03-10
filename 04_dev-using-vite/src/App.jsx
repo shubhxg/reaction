@@ -3,19 +3,21 @@ import seriesData from "./data/seriesData.json";
 
 export default function App () {
   return (
-    <div className="card">
-      {seriesData.map((series) => {
-        return (
-          <Card
-            key={series.id}
-            name={series.name}
-            value={series.tag}
-            rating={series.rating}
-            isNerdy={series.isNerdy}
-            imgSource={series.imgSource}
-          />
-        );
-      })}
-    </div>
+    <section className="main">
+      <div className="card-container">
+        {seriesData.map((series) => {
+          return (
+            // passing the props to the card component
+            <Card
+              key={series.id}
+              rating={series.seriesRating}
+              imgSource={series.imgSource}
+              name={series.seriesName}
+              isNerdy={series.isNerdy}
+            />
+          );
+        })}
+      </div>
+    </section>
   );
 };
