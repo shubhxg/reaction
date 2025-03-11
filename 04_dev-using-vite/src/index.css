@@ -9,9 +9,8 @@
 }
 
 body {
-  font-family: 'Franklin Gothic Medium', 'Arial';
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
-  background-color: black;
   display: flex;
   justify-content: center;
   color: white;

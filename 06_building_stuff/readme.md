@@ -252,7 +252,7 @@ So, in summary, this line initializes a state variable `var` with the value `dat
 
 The useEffect hook is called after every render, including the first render.
 
-It is used to handle tasks such as data fetching, subscriptions, or manually changing the DOM from React components.
+It is used to handle tasks of side effects such as data fetching, subscriptions, or manually changing the DOM from React components.
 
 ```jsx
 useEffect(useEffectCallBack, []);
@@ -269,6 +269,13 @@ As soon as the render cycle of react component is finished, useEffect() is invok
 - If there is a `dependency array`, then the callback is `invoked only when the dependency changes`.
 
 - If there is a `empty dependency array`, then the callback is `invoked only once after the first render cycle`.
+
+### 3. `useContext()` 
+-> for sharing data across components, 
+
+### 4. `useCallback()`
+-> For optimizing callback functions
+
 
 ## Shimmer UI / Skeleton UI
 

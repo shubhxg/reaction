@@ -5,7 +5,7 @@ import "./index.css";
 
 // entry point of the react app
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode> development mode
     <App />
-  </StrictMode>
+  // </StrictMode>
 );
