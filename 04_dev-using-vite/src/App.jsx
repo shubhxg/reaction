@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Card from "./Components/Card.jsx";
 import seriesData from "./data/seriesData.json";
 
 export default function App () {
+  const [hasLiked, setHasLiked] = useState(false);
+  
   return (
     <section className="main">
       <div className="card-container">

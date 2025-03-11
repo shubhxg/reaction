@@ -19,5 +19,26 @@
     "seriesRating": 9,
     "isNerdy": false,
     "imgSource": "https://uniathenaprods3.uniathena.com/s3fs-public/insights-article/seriesreview-e2-80-9cfriends-e2-80-9d_0.jpg"
+  },
+  {
+    "id": 4,
+    "seriesName": "Breaking Bad",
+    "seriesRating": 9.5,
+    "isNerdy": false,
+    "imgSource": "https://m.media-amazon.com/images/M/MV5BMTJiMzgwZTktYzZhZC00YzhhLWEzZDUtMGM2NTE4MzQ4NGFmXkEyXkFqcGdeQWpybA@@._V1_.jpg"
+  },
+  {
+    "id": 5,
+    "seriesName": "Better Call Saul",
+    "seriesRating": 8.9,
+    "isNerdy": false,
+    "imgSource": "https://images.squarespace-cdn.com/content/v1/60cea61fbb807927ef45d106/1681062647157-EGWUWVSGOAPP8UTQGTFV/IMG_9644.jpeg"
+  },
+  {
+    "id": 6,
+    "seriesName": "Big Bang Theory",
+    "seriesRating": 9.3,
+    "isNerdy": true,
+    "imgSource": "https://m.media-amazon.com/images/I/81r8i2knyVL._AC_UF894,1000_QL80_.jpg"
   }
 ]

@@ -9,8 +9,10 @@ export default function Card({ imgSource, name, rating, isNerdy}) {
       />
       <h3 className="text-xl mt-1 font-bold">{name}</h3>
       <h5 className="text-sm ">⭐ {rating}</h5>
-      <h5 className="text-xs">{isNerdy ? "Nerdy Show" : "Drama/Comedy"}</h5>
-      <br />
+      <div className="flex justify-between">
+        <h5 className="text-xs">{isNerdy ? "Nerdy Show" : "Drama/Comedy"}</h5>
+        <button className="text-xs bg-blue-900 py-1 px-2 mt-2 rounded-md hover:bg-violet-700">👍 Like</button>
+      </div>
     </div>
   );
 }

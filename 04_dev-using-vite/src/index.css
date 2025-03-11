@@ -18,10 +18,11 @@ body {
 }
 
 .card-container {
-  width: 100vw;
+  max-width: 70vw;
   height: 100vh;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 4rem;
+  gap: 1rem;
 }
