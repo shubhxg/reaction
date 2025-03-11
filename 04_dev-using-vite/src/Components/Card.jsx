@@ -1,6 +1,16 @@
-export default function Card({ imgSource, name, rating, isNerdy}) {
+import { useState, useEffect } from "react";
+
+export default function Card({ imgSource, name, rating, isNerdy }) {
+  const [hasLiked, setHasLiked] = useState(false);
+
+  useEffect(
+    /* effect */ () => {
+      hasLiked ? console.log(`${name} has been liked!`) : console.log("");
+    }
+  );
+
   return (
-    <div className="bg-gray-900 py-3 px-3 ease-out duration-300 rounded-xl hover:outline outline-2 outline-violet-800">
+    <div className="py-3 px-3 ease-out duration-300 rounded-xl hover:bg-[#1d284d] hover:outline outline-violet-900 outline-2">
       <img
         className="object-cover mb-4 w-48 h-40 rounded-lg"
         src={imgSource}
@@ -11,7 +21,16 @@ export default function Card({ imgSource, name, rating, isNerdy}) {
       <h5 className="text-sm ">⭐ {rating}</h5>
       <div className="flex justify-between">
         <h5 className="text-xs">{isNerdy ? "Nerdy Show" : "Drama/Comedy"}</h5>
-        <button className="text-xs bg-blue-900 py-1 px-2 mt-2 rounded-md hover:bg-violet-700">👍 Like</button>
+        <button
+          onClick={() => setHasLiked((prevState) => !prevState)}
+          className={
+            hasLiked
+              ? "text-xs bg-violet-800 py-1 px-4 mt-2 rounded-md"
+              : "text-xs bg-[#212f4d] py-1 px-3 mt-2 rounded-md hover:bg-violet-900"
+          }
+        >
+          {hasLiked ? "💜 Liked" : "🤍"}
+        </button>
       </div>
     </div>
   );
