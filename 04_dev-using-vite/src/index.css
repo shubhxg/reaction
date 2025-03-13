@@ -18,7 +18,6 @@ body {
 
 .card-container {
   max-width: 70vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
